@@ -181,7 +181,7 @@
 											"top": 406,
 											"width": 414.42578125,
 											"height": 13,
-											"text": "-createSetOfMarbles()",
+											"text": "-initializeMarbles()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -215,24 +215,7 @@
 											"top": 436,
 											"width": 414.42578125,
 											"height": 13,
-											"text": "+movePlayer1(positionOfMarble: Position, postionToGo: Position)",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF3pzGtz+ywZyY=",
-											"_parent": {
-												"$ref": "AAAAAAF3oVjMUapd4IA="
-											},
-											"model": {
-												"$ref": "AAAAAAF3pzGtseytT5Q="
-											},
-											"font": "Arial;13;0",
-											"left": 781,
-											"top": 451,
-											"width": 414.42578125,
-											"height": 13,
-											"text": "+movePLayer2(positionOfMarble: Position, postionToGo: Position)",
+											"text": "+movePlayer(positionOfMarble: Position, postionToGo: Position)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -246,10 +229,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 466,
+											"top": 451,
 											"width": 414.42578125,
 											"height": 13,
-											"text": "-countMarbleLoss()",
+											"text": "-updateMarbleLoss()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -263,7 +246,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 481,
+											"top": 466,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "-updateStatus()",
@@ -280,7 +263,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 496,
+											"top": 481,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+gameStatus(): GameStatus",
@@ -297,7 +280,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 511,
+											"top": 496,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "-gameStatus(gameStatus: GameStatus)",
@@ -314,7 +297,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 526,
+											"top": 511,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+notify(positionOfMarble: Position, postionToGo: Position)",
@@ -331,7 +314,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 781,
-											"top": 541,
+											"top": 526,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+addPropertyChangeListener(listener: PropertyChangeListener listener)",
@@ -342,7 +325,7 @@
 									"left": 776,
 									"top": 371,
 									"width": 424.42578125,
-									"height": 188
+									"height": 173
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -595,7 +578,7 @@
 											"top": 748,
 											"width": 256.19775390625,
 											"height": 13,
-											"text": "+hexagonState(position: Position)",
+											"text": "+updateHexagonState(position: Position)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -896,23 +879,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAF3pzwKDw7vo98=",
-											"_parent": {
-												"$ref": "AAAAAAF3oWG60KqxvzY="
-											},
-											"model": {
-												"$ref": "AAAAAAF3pzwJ8A7saig="
-											},
-											"font": "Arial;13;0",
-											"left": 429,
-											"top": 449,
-											"width": 279.2587890625,
-											"height": 13,
-											"text": "+nbMarblesLoss(nbMarblesLoss: int)",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAF3pzxkQxDXtPg=",
 											"_parent": {
 												"$ref": "AAAAAAF3oWG60KqxvzY="
@@ -922,10 +888,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 429,
-											"top": 464,
+											"top": 449,
 											"width": 279.2587890625,
 											"height": 13,
 											"text": "+nbMarblesLoss(): int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF3pzwKDw7vo98=",
+											"_parent": {
+												"$ref": "AAAAAAF3oWG60KqxvzY="
+											},
+											"model": {
+												"$ref": "AAAAAAF3pzwJ8A7saig="
+											},
+											"font": "Arial;13;0",
+											"left": 429,
+											"top": 464,
+											"width": 279.2587890625,
+											"height": 13,
+											"text": "+nbMarblesLoss(nbMarblesLoss: int)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1251,8 +1234,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": -496,
+											"left": -208,
+											"top": -512,
 											"height": 13
 										},
 										{
@@ -1262,9 +1245,9 @@
 												"$ref": "AAAAAAF3oWLByasDfy0="
 											},
 											"font": "Arial;13;1",
-											"left": 405,
-											"top": 631,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 623,
+											"width": 371.033203125,
 											"height": 13,
 											"text": "Marble"
 										},
@@ -1276,8 +1259,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": -496,
+											"left": -208,
+											"top": -512,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -1290,16 +1273,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": -496,
+											"left": -208,
+											"top": -512,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 400,
-									"top": 624,
-									"width": 291.4423828125,
+									"left": 384,
+									"top": 616,
+									"width": 381.033203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF3oWLByasEHrI="
@@ -1324,9 +1307,9 @@
 										"$ref": "AAAAAAF3oWLByasAsaQ="
 									},
 									"font": "Arial;13;0",
-									"left": 400,
-									"top": 649,
-									"width": 291.4423828125,
+									"left": 384,
+									"top": 641,
+									"width": 381.033203125,
 									"height": 10
 								},
 								{
@@ -1349,9 +1332,9 @@
 												"$ref": "AAAAAAF3pvUsp1robAQ="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
-											"top": 664,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 656,
+											"width": 371.033203125,
 											"height": 13,
 											"text": "+Marble(positionOnBoard: Position, color: Color)",
 											"horizontalAlignment": 0
@@ -1366,11 +1349,11 @@
 												"$ref": "AAAAAAF3pvMYkE3E0is="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
-											"top": 679,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 671,
+											"width": 371.033203125,
 											"height": 13,
-											"text": "+move()",
+											"text": "+move(board: Board, positionToGo: Position, marbles: Marble...)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1383,9 +1366,9 @@
 												"$ref": "AAAAAAF3pvEBSz/KT9w="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
-											"top": 694,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 686,
+											"width": 371.033203125,
 											"height": 13,
 											"text": "+positionOnBoard(): Position",
 											"horizontalAlignment": 0
@@ -1400,9 +1383,9 @@
 												"$ref": "AAAAAAF3pvGeokIX/YQ="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
-											"top": 709,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 701,
+											"width": 371.033203125,
 											"height": 13,
 											"text": "+positionOnBoard(position: Position)",
 											"horizontalAlignment": 0
@@ -1417,18 +1400,18 @@
 												"$ref": "AAAAAAF3pxGJDq6TVMs="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
-											"top": 724,
-											"width": 281.4423828125,
+											"left": 389,
+											"top": 716,
+											"width": 371.033203125,
 											"height": 13,
 											"text": "+color(): Color",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 400,
-									"top": 659,
-									"width": 291.4423828125,
+									"left": 384,
+									"top": 651,
+									"width": 381.033203125,
 									"height": 83
 								},
 								{
@@ -1442,8 +1425,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -248,
+									"left": -104,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -1458,17 +1441,17 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -88,
-									"top": -248,
+									"left": -104,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 400,
-							"top": 624,
-							"width": 291.4423828125,
+							"left": 384,
+							"top": 616,
+							"width": 381.033203125,
 							"height": 193,
 							"nameCompartment": {
 								"$ref": "AAAAAAF3oWLByasDfy0="
@@ -3827,8 +3810,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 358,
-									"top": 540,
+									"left": 370,
+									"top": 536,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -3848,8 +3831,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 347,
-									"top": 550,
+									"left": 360,
+									"top": 547,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -3869,8 +3852,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 379,
-									"top": 519,
+									"left": 391,
+									"top": 515,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -3890,8 +3873,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 423,
-									"top": 608,
+									"left": 440,
+									"top": 602,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -3911,8 +3894,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 412,
-									"top": 616,
+									"left": 430,
+									"top": 610,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -3931,8 +3914,8 @@
 										"$ref": "AAAAAAF3pZFoqDPEEl8="
 									},
 									"font": "Arial;13;0",
-									"left": 436,
-									"top": 592,
+									"left": 452,
+									"top": 585,
 									"width": 21.68359375,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -3954,8 +3937,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 293,
-									"top": 472,
+									"left": 301,
+									"top": 471,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -3974,7 +3957,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 285,
+									"left": 294,
 									"top": 482,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -3993,8 +3976,8 @@
 										"$ref": "AAAAAAF3pZFoqDPFhHs="
 									},
 									"font": "Arial;13;0",
-									"left": 306,
-									"top": 450,
+									"left": 314,
+									"top": 448,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4041,7 +4024,7 @@
 								"$ref": "AAAAAAF3oWLByasCFyE="
 							},
 							"lineStyle": 1,
-							"points": "452:623;286:449",
+							"points": "470:615;293:449",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF3pZFoqDPIMeM="
@@ -4099,7 +4082,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 622,
-									"top": 853,
+									"top": 849,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4120,7 +4103,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 637,
-									"top": 853,
+									"top": 849,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4141,7 +4124,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 593,
-									"top": 854,
+									"top": 850,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4162,7 +4145,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 616,
-									"top": 835,
+									"top": 827,
 									"width": 14.82177734375,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4185,7 +4168,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 636,
-									"top": 838,
+									"top": 830,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -4205,7 +4188,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 592,
-									"top": 831,
+									"top": 823,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -4317,7 +4300,7 @@
 							"tail": {
 								"$ref": "AAAAAAF3oWLByasCFyE="
 							},
-							"points": "608:816;608:904",
+							"points": "608:808;608:904",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF3pZGBlzT6DjM="
@@ -5151,8 +5134,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 756,
-									"top": 600,
+									"left": 776,
+									"top": 593,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -5172,8 +5155,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 764,
-									"top": 613,
+									"left": 784,
+									"top": 606,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -5193,8 +5176,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 739,
-									"top": 575,
+									"left": 759,
+									"top": 568,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -5214,7 +5197,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 791,
+									"left": 798,
 									"top": 579,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -5235,8 +5218,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 796,
-									"top": 591,
+									"left": 803,
+									"top": 592,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -5255,8 +5238,8 @@
 										"$ref": "AAAAAAF3pwMXYqlI7D8="
 									},
 									"font": "Arial;13;0",
-									"left": 778,
-									"top": 553,
+									"left": 784,
+									"top": 554,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -5278,8 +5261,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 713,
-									"top": 623,
+									"left": 747,
+									"top": 607,
 									"width": 14.82177734375,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -5300,8 +5283,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 729,
-									"top": 633,
+									"left": 764,
+									"top": 617,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -5319,8 +5302,8 @@
 										"$ref": "AAAAAAF3pwMXYqlJowM="
 									},
 									"font": "Arial;13;0",
-									"left": 691,
-									"top": 601,
+									"left": 725,
+									"top": 586,
 									"width": 23.841796875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -5371,7 +5354,7 @@
 								"$ref": "AAAAAAF3oVjMUKpW15Y="
 							},
 							"lineStyle": 1,
-							"points": "806:559;691:630",
+							"points": "812:559;725:615",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF3pwMXY6lMLCA="
@@ -6066,24 +6049,7 @@
 											"top": 180,
 											"width": 414.42578125,
 											"height": 13,
-											"text": "+movePlayer1(positionOfMarble: Position, postionToGo: Position)",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF3sYqGwi+nHJc=",
-											"_parent": {
-												"$ref": "AAAAAAF3qotEymgvmu0="
-											},
-											"model": {
-												"$ref": "AAAAAAF3sYqGny+CVgs="
-											},
-											"font": "Arial;13;0",
-											"left": 773,
-											"top": 195,
-											"width": 414.42578125,
-											"height": 13,
-											"text": "+movePLayer2(positionOfMarble: Position, postionToGo: Position)",
+											"text": "+movePlayer(positionOfMarble: Position, postionToGo: Position)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6097,7 +6063,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 773,
-											"top": 210,
+											"top": 195,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+gameStatus(): GameStatus",
@@ -6114,7 +6080,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 773,
-											"top": 225,
+											"top": 210,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+notify(positionOfMarble: Position, postionToGo: Position)",
@@ -6131,7 +6097,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 773,
-											"top": 240,
+											"top": 225,
 											"width": 414.42578125,
 											"height": 13,
 											"text": "+addPropertyChangeListener(listener: PropertyChangeListener listener)",
@@ -6142,7 +6108,7 @@
 									"left": 768,
 									"top": 160,
 									"width": 424.42578125,
-									"height": 98
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -6445,7 +6411,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
-							"name": "Game"
+							"name": "Game",
+							"documentation": "Simple constructor of game."
 						},
 						{
 							"_type": "UMLOperation",
@@ -6453,7 +6420,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
-							"name": "startGame"
+							"name": "startGame",
+							"documentation": "Method startGame , as advertised which initializes the game board, the marbles, the players and the gameStatus.\n"
 						},
 						{
 							"_type": "UMLOperation",
@@ -6461,7 +6429,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
-							"name": "createSetOfMarbles",
+							"name": "initializeMarbles",
+							"documentation": "Method initialize marbles, initializes a set of marbles.",
 							"visibility": "private"
 						},
 						{
@@ -6471,6 +6440,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "move",
+							"documentation": "Method move, moves the marble at the first postion given in parameter to the second position given in parameter.",
 							"visibility": "private",
 							"parameters": [
 								{
@@ -6503,7 +6473,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
-							"name": "movePlayer1",
+							"name": "movePlayer",
+							"documentation": "Method movePlayer, checks if the marble at the given postion is the same color as the player's color and then moves the Player's marble.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6531,44 +6502,14 @@
 						},
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF3pzGtseytT5Q=",
-							"_parent": {
-								"$ref": "AAAAAAF3oVjMUKpUGzc="
-							},
-							"name": "movePLayer2",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF3pzQe6/YBJhM=",
-									"_parent": {
-										"$ref": "AAAAAAF3pzGtseytT5Q="
-									},
-									"name": "positionOfMarble",
-									"type": {
-										"$ref": "AAAAAAF3oYJtbauc05Y="
-									}
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF3pzRF0Pet/So=",
-									"_parent": {
-										"$ref": "AAAAAAF3pzGtseytT5Q="
-									},
-									"name": "postionToGo",
-									"type": {
-										"$ref": "AAAAAAF3oYJtbauc05Y="
-									}
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
 							"_id": "AAAAAAF3pyI+d8eVjK4=",
 							"_parent": {
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
-							"name": "countMarbleLoss",
-							"visibility": "private"
+							"name": "updateMarbleLoss",
+							"documentation": "Method updateMarbleLoss, updates the player's number of marbles loss.",
+							"visibility": "private",
+							"specification": "Method countMarbleLoss, updates"
 						},
 						{
 							"_type": "UMLOperation",
@@ -6577,6 +6518,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "updateStatus",
+							"documentation": "Method updateStatus , updates the status of the game.\n",
 							"visibility": "private"
 						},
 						{
@@ -6586,6 +6528,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "gameStatus",
+							"documentation": "Simple getter of _gameStatus.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6608,6 +6551,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "gameStatus",
+							"documentation": "Simple setter of _gameStatus.",
 							"visibility": "private",
 							"parameters": [
 								{
@@ -6630,6 +6574,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "notify",
+							"documentation": "Method notify, notifies the change to the listeners .",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6662,6 +6607,7 @@
 								"$ref": "AAAAAAF3oVjMUKpUGzc="
 							},
 							"name": "addPropertyChangeListener",
+							"documentation": "Method addPropertyChangeListener, adds a listener to the class.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6724,6 +6670,7 @@
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
 							"name": "Board",
+							"documentation": "Simple constructor of Board.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6742,7 +6689,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
-							"name": "Board"
+							"name": "Board",
+							"documentation": "empty constructor of Board."
 						},
 						{
 							"_type": "UMLOperation",
@@ -6751,6 +6699,7 @@
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
 							"name": "isInside",
+							"documentation": "Method isInside, indicates whether a given position is on the game board or not.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6782,6 +6731,7 @@
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
 							"name": "isHexagonFree",
+							"documentation": "Method isHexagonFree, get the _isFree attribute of hexagon at the given position.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6812,8 +6762,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
-							"name": "hexagonState",
-							"documentation": "Changes the isFree attribute of the hexagon\nin the given postion in parameter.",
+							"name": "updateHexagonState",
+							"documentation": "Method hexagonState, changes the _isFree attribute of the hexagon\nin the given postion in parameter.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6835,6 +6785,7 @@
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
 							"name": "toString",
+							"documentation": "Method toString, return the string representation of the board.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6855,6 +6806,7 @@
 								"$ref": "AAAAAAF3oVtTNqp+234="
 							},
 							"name": "hexagons",
+							"documentation": "Simple getter of the array of hexagons.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6960,6 +6912,7 @@
 								"$ref": "AAAAAAF3oWG6z6qoNgE="
 							},
 							"name": "Player",
+							"documentation": "Simple constructor of Player.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6992,6 +6945,7 @@
 								"$ref": "AAAAAAF3oWG6z6qoNgE="
 							},
 							"name": "color",
+							"documentation": "Simple getter of _color.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7014,6 +6968,7 @@
 								"$ref": "AAAAAAF3oWG6z6qoNgE="
 							},
 							"name": "playerStatus",
+							"documentation": "Simple getter of _playerStatus.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7036,6 +6991,7 @@
 								"$ref": "AAAAAAF3oWG6z6qoNgE="
 							},
 							"name": "playerStatus",
+							"documentation": "Simple setter of _playerStatus.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7052,30 +7008,12 @@
 						},
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF3pzwJ8A7saig=",
-							"_parent": {
-								"$ref": "AAAAAAF3oWG6z6qoNgE="
-							},
-							"name": "nbMarblesLoss",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF3p0Db8heyMaM=",
-									"_parent": {
-										"$ref": "AAAAAAF3pzwJ8A7saig="
-									},
-									"name": "nbMarblesLoss",
-									"type": "int"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
 							"_id": "AAAAAAF3pzxkJhDU9Mo=",
 							"_parent": {
 								"$ref": "AAAAAAF3oWG6z6qoNgE="
 							},
 							"name": "nbMarblesLoss",
+							"documentation": "Simple getter of _nbMarblesLoss.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7086,6 +7024,26 @@
 									"name": "returned number of marbles loss",
 									"type": "int",
 									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF3pzwJ8A7saig=",
+							"_parent": {
+								"$ref": "AAAAAAF3oWG6z6qoNgE="
+							},
+							"name": "nbMarblesLoss",
+							"documentation": "Simple setter of _nbMarblesLoss",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF3p0Db8heyMaM=",
+									"_parent": {
+										"$ref": "AAAAAAF3pzwJ8A7saig="
+									},
+									"name": "nbMarblesLoss",
+									"type": "int"
 								}
 							]
 						}
@@ -7197,7 +7155,41 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oWLByasAsaQ="
 							},
-							"name": "move"
+							"name": "move",
+							"documentation": "Method move, moves the marble.",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF3totla3IDuhM=",
+									"_parent": {
+										"$ref": "AAAAAAF3pvMYkE3E0is="
+									},
+									"name": "board",
+									"type": {
+										"$ref": "AAAAAAF3oVtTNqp+234="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF3toxhKnPLlSo=",
+									"_parent": {
+										"$ref": "AAAAAAF3pvMYkE3E0is="
+									},
+									"name": "positionToGo",
+									"type": {
+										"$ref": "AAAAAAF3oYJtbauc05Y="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF3to02LnT805Y=",
+									"_parent": {
+										"$ref": "AAAAAAF3pvMYkE3E0is="
+									},
+									"name": "marbles",
+									"type": "Marble..."
+								}
+							]
 						},
 						{
 							"_type": "UMLOperation",
@@ -7206,6 +7198,7 @@
 								"$ref": "AAAAAAF3oWLByasAsaQ="
 							},
 							"name": "positionOnBoard",
+							"documentation": "Simple getter of _positionOnBoard.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7228,6 +7221,7 @@
 								"$ref": "AAAAAAF3oWLByasAsaQ="
 							},
 							"name": "positionOnBoard",
+							"documentation": "Simple setter of _positionOnBoard.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7249,6 +7243,7 @@
 								"$ref": "AAAAAAF3oWLByasAsaQ="
 							},
 							"name": "color",
+							"documentation": "Simple getter of color.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7326,6 +7321,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "Hexagon",
+							"documentation": "Simple constructor of Hexagon, takes a type and a boolean.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7356,6 +7352,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "Hexagon",
+							"documentation": "Simple constructor of Hexagon, takes a type.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7376,7 +7373,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
-							"name": "Hexagon"
+							"name": "Hexagon",
+							"documentation": "Empty constructor of Hexagon."
 						},
 						{
 							"_type": "UMLOperation",
@@ -7385,6 +7383,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "type",
+							"documentation": "Simple getter of _type.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7407,6 +7406,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "isFree",
+							"documentation": "Simple getter of _isFree.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7427,6 +7427,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "type",
+							"documentation": "Simple setter of _type.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7448,6 +7449,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "isFree",
+							"documentation": "Simple setter of _isFree.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7467,6 +7469,7 @@
 								"$ref": "AAAAAAF3oWZmLas+kTk="
 							},
 							"name": "toString",
+							"documentation": "Method toString, return the string representation of the hexagon.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7597,6 +7600,7 @@
 								"$ref": "AAAAAAF3oYJtbauc05Y="
 							},
 							"name": "Position",
+							"documentation": "Simple constructor of Position.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7634,7 +7638,7 @@
 								"$ref": "AAAAAAF3oYJtbauc05Y="
 							},
 							"name": "next ",
-							"documentation": "Returns the next position in the direction given in parameter.",
+							"documentation": "Method Position, return the next position in the direction given in parameter.",
 							"stereotype": "",
 							"parameters": [
 								{
@@ -7670,6 +7674,7 @@
 								"$ref": "AAAAAAF3oYJtbauc05Y="
 							},
 							"name": "x",
+							"documentation": "Simple getter of _x.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7690,6 +7695,7 @@
 								"$ref": "AAAAAAF3oYJtbauc05Y="
 							},
 							"name": "y",
+							"documentation": "Simple getter of _y.\n",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7710,6 +7716,7 @@
 								"$ref": "AAAAAAF3oYJtbauc05Y="
 							},
 							"name": "z",
+							"documentation": "Simple getter of _z.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7781,7 +7788,7 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Direction",
-					"documentation": " Direction represents the direction the marble can take, directions are Up left, Up down, Down left and Down Right.",
+					"documentation": " Direction represents the direction the marble can take, directions are Up left, Up down, Down left and Down Right.\n\nWe will need this class in the automatization of the method next(Direction) which will give the next marble in the direction supposed by the movement of the marble.\n",
 					"literals": [
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -7867,7 +7874,7 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "PlayerStatus",
-					"documentation": "The PlayerStatus enumerationrepresents the different statuss of a player.",
+					"documentation": "The PlayerStatus enumeration represents the different statuss of a player.",
 					"literals": [
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -7911,7 +7918,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3qotEyWgmg1A="
 							},
-							"name": "startGame"
+							"name": "startGame",
+							"documentation": "Method startGame , as advertised which initializes the game board, the marbles, the players and the gameStatus.\n"
 						},
 						{
 							"_type": "UMLOperation",
@@ -7919,7 +7927,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF3qotEyWgmg1A="
 							},
-							"name": "movePlayer1",
+							"name": "movePlayer",
+							"documentation": "Method movePlayer, checks if the marble at the given postion is the same color as the player's color and then moves the Player's marble.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7947,43 +7956,12 @@
 						},
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF3sYqGny+CVgs=",
-							"_parent": {
-								"$ref": "AAAAAAF3qotEyWgmg1A="
-							},
-							"name": "movePLayer2",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF3sYqGny+Du8Y=",
-									"_parent": {
-										"$ref": "AAAAAAF3sYqGny+CVgs="
-									},
-									"name": "positionOfMarble",
-									"type": {
-										"$ref": "AAAAAAF3oYJtbauc05Y="
-									}
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF3sYqGny+E8jY=",
-									"_parent": {
-										"$ref": "AAAAAAF3sYqGny+CVgs="
-									},
-									"name": "postionToGo",
-									"type": {
-										"$ref": "AAAAAAF3oYJtbauc05Y="
-									}
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
 							"_id": "AAAAAAF3sYu5vzL1HR4=",
 							"_parent": {
 								"$ref": "AAAAAAF3qotEyWgmg1A="
 							},
 							"name": "gameStatus",
+							"documentation": "Simple getter of _gameStatus.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -8006,6 +7984,7 @@
 								"$ref": "AAAAAAF3qotEyWgmg1A="
 							},
 							"name": "notify",
+							"documentation": "Method notify, notifies the change to the listeners .",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -8038,6 +8017,7 @@
 								"$ref": "AAAAAAF3qotEyWgmg1A="
 							},
 							"name": "addPropertyChangeListener",
+							"documentation": "Method addPropertyChangeListener, adds a listener to the class.",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
