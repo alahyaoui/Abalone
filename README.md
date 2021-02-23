@@ -11,7 +11,6 @@ Un joueur joue avec des billes blanches, l’autre avec des billes noires. Le bu
 **Confer : Wikipedia**
 
 #### Auteurs de ce projet:
-
 Sylla, Alhassanne.
 Matricule: 52192.
 Groupe: D212.
@@ -22,6 +21,9 @@ Groupe: D122.
 
 # Rapport
 
-### Modelisation:
+## Modelisation:
 BLABALALKDNKJDFHDKSVFHDJVBJHVBDFHJVDF
+
+#### Date de remise:
+vendredi 19 février 2021 à 18h00
 
