@@ -1,7 +1,8 @@
 # Introduction
 
-Dans ce depôt se trouve le projet Abalone du binôme Sylla Alhassanne(52192) et Lahyaoui Ayoub(54895).
-Le projet respectera le design patern MVC mais implementera aussi d'autre design patern tel que le design patern Observer/Observable.
+Dans ce depôt se trouve le projet Abalone du binôme Sylla Alhassanne et Lahyaoui Ayoub.
+Le projet respectera le design pattern MVC mais implementera aussi d'autre design patern tel que le design pattern Observer/Observable.
+Ce depôt sera continuellement mis a jour par les deux membres du binôme en fonction de l'avancée du projet.
 
 Description d'Abalone:
 Abalone est un jeu de stratégie combinatoire abstrait où s’affrontent deux joueurs.
