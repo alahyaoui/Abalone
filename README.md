@@ -21,9 +21,18 @@ Groupe: D122.
 
 # Rapport
 
-### Modelisation:
-BLABALALKDNKJDFHDKSVFHDJVBJHVBDFHJVDF
+### Modélisation métier:
 
 ###### Date de remise:
-vendredi 19 février 2021 à 18h00
+vendredi 19 février 2021 à 18h00.
+
+### Implémentation Console:
+
+###### Date de remise:
+vendredi 2 avril 2021 à 18h00.
+
+### Implémentation Graphique:
+
+###### Date de remise:
+vendredi 7 mai 2021 à 18h00
 
