@@ -14,12 +14,14 @@ Un joueur joue avec des billes blanches, l’autre avec des billes noires. Le bu
 #### Auteurs de ce projet:
 
 Sylla, Alhassanne.
-Matricule 52192.
-Groupe : D212.
+Matricule: 52192.
+Groupe: D212.
 
 Lahyaoui, Ayoub. 
-Matricule : 54895.
-Groupe : D122.
+Matricule: 54895.
+Groupe: D122.
 
 # Rapport
+
+### Modelisation 
 
