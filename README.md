@@ -9,7 +9,7 @@ Ce depôt sera continuellement mis a jour par les deux membres du binôme en fon
 Abalone est un jeu de stratégie combinatoire abstrait où s’affrontent deux joueurs.
 Un joueur joue avec des billes blanches, l’autre avec des billes noires. Le but du jeu est d’être le premier à faire sortir 6 billes adverses du plan de jeu en les poussant avec ses propres billes.
 
-Confer : Wikipedia
+**Confer : Wikipedia**
 
 #### Auteurs de ce projet:
 
