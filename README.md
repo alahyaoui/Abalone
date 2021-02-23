@@ -21,17 +21,17 @@ Groupe: D122.
 
 # Rapport
 
-### Modélisation métier:
+## Modélisation métier:
 //TODO Rapport modélisation métier.
 ###### Date de remise:
 vendredi 19 février 2021 à 18h00.
 
-### Implémentation Console:
+## Implémentation Console:
 //TODO Rapport Implémentation console.
 ###### Date de remise:
 vendredi 2 avril 2021 à 18h00.
 
-### Implémentation Graphique:
+## Implémentation Graphique:
 //TODO Rapport Implémentation graphique.
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
