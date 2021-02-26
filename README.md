@@ -22,7 +22,7 @@ Groupe: D122.
 # Rapport
 
 ## Modélisation métier:
-Analyse/Image/AbaloneModelisation.PNG
+![alt text](https://git.esi-bru.be/dev4-pbt/2020-2021/a-lahyaoui-a-sylla/-/blob/master/Analyse/Image/AbaloneModelisation.PNG?raw=true)
 
 ###### Date de remise:
 vendredi 19 février 2021 à 18h00.
