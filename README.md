@@ -22,6 +22,7 @@ Groupe: D122.
 # Rapport
 
 ## Modélisation métier:
+Analyse/Image/AbaloneModelisation.PNG
 
 ###### Date de remise:
 vendredi 19 février 2021 à 18h00.
