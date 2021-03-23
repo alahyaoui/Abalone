@@ -1,0 +1,10 @@
+debug/Controller.o
+debug/Main.o
+debug/Board.o
+debug/Game.o
+debug/Hexagon.o
+debug/Marble.o
+debug/Player.o
+debug/Position.o
+debug/Subject.o
+debug/View.o

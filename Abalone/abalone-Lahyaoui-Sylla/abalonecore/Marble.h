@@ -1,10 +1,11 @@
 #ifndef MARBLE_H
 #define MARBLE_H
 
+#include "Position.h"
 namespace abalone::abalonecore{
 
 class Board;
-class Position;
+//class Position;
 enum class Color;
 
 class Marble {

@@ -4,10 +4,13 @@
 #include <ostream>
 #include <array>
 
-namespace abalone::abalonecore{
+#include "Hexagon.h"
+
+
+namespace abalone::model{
 
 class Position;
-class Hexagon;
+//class Hexagon;
 
 class Board{
 
@@ -15,20 +18,22 @@ private:
     std::array<std::array<Hexagon, 9>, 9>  _hexagons;
 
 public:
-    inline Board();
-    inline Board(std::array<std::array<Hexagon, 9>, 9> hexagons);
+    Board();
+    Board(std::array<std::array<Hexagon, 9>, 9> hexagons);
 
-    inline std::array<std::array<Hexagon, 9>, 9> hexagons() const;
-    inline int getNbRow() const;
-    inline int getNbColumn() const;
+    std::array<std::array<Hexagon, 9>, 9> hexagons() const;
+    int getNbRow() const;
+    int getNbColumn() const;
 
-    inline bool isInside(Position position) const;
-    inline void updateHexagonState(Position position);
+    bool isInside(Position position) const;
+    bool isHexagonFree(Position position) const;
+    void updateHexagonState(Position position);
 
-    inline std::string to_string() const;
+    std::string to_string() const;
 };
 
 }// namespace abalone::abalonecore
+
 #endif // BOARD_H
 
 

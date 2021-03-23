@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.2, 2021-03-04T16:58:52. -->
+<!-- Written by QtCreator 4.13.2, 2021-03-14T19:01:51. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -325,8 +325,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Informatique/ESI/BLOC 2/Quadrimestre 2/DEV4/Projet/2020-2021/Réalisation/a-lahyaoui-a-sylla/Abalone/abalone-Lahyaoui-Sylla/tui/tui.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Informatique/ESI/BLOC 2/Quadrimestre 2/DEV4/Projet/2020-2021/Réalisation/a-lahyaoui-a-sylla/Abalone/abalone-Lahyaoui-Sylla/tui/tui.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">tui2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Informatique/ESI/Bachelor-Computer-Science/BLOC 2/Quadrimestre 2/DEV4/Projet/2020-2021/Réalisation/a-lahyaoui-a-sylla/Abalone/abalone-Lahyaoui-Sylla/tui/tui.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Informatique/ESI/Bachelor-Computer-Science/BLOC 2/Quadrimestre 2/DEV4/Projet/2020-2021/Réalisation/a-lahyaoui-a-sylla/Abalone/abalone-Lahyaoui-Sylla/tui/tui.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
@@ -336,6 +337,7 @@
     <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseTerminal">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Informatique/ESI/BLOC 2/Quadrimestre 2/DEV4/Projet/2020-2021/Réalisation/a-lahyaoui-a-sylla/Abalone/build-abalone-Lahyaoui-Sylla-Desktop_Qt_5_15_1_MinGW_64_bit-Debug/tui</value>
    </valuemap>

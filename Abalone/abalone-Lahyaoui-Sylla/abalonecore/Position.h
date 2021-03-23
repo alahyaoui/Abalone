@@ -31,7 +31,8 @@ Position::Position(int x, int y):
 {}
 
 Position Position::next(Direction direction){
-    return Position(this->_x + toPosition(direction)[0], this->_y + toPosition(direction)[1]);
+    Position dir = toPosition(direction);
+    return Position(this->_x + dir._x, this->_y + dir._y);
 }
 
 int Position::x(){

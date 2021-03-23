@@ -1,4 +1,4 @@
-QT -= gui
+CONFIG -= qt
 
 TEMPLATE = lib
 DEFINES += ABALONECORE_LIBRARY
@@ -10,6 +10,8 @@ include(../config.pri)
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Board.cpp \
+    Hexagon.cpp \
     abalonecore.cpp
 
 HEADERS += \
@@ -22,12 +24,6 @@ HEADERS += \
     Player.h \
     Position.h \
     abalonecore_global.h
-
-# Default rules for deployment.
-unix {
-    target.path = /usr/lib
-}
-!isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
     abalonecore.pri
