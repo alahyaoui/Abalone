@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <array>
+
 #include "abalone.model/Observer.h"
 #include "abalone.model/Position.h"
 
@@ -13,7 +14,7 @@ namespace abalone::view{
 
 class InterfaceView: public nvs::Observer{
 private:
-    virtual Position askPosition();
+    virtual Position askPosition() = 0;
 public:
     virtual ~InterfaceView() = default;
 
@@ -26,7 +27,8 @@ public:
     virtual void displayMessage(std::string message) = 0;
     virtual void displayError(std::string message) = 0;
 
-    virtual void update(const nvs::Subject * subject) = 0;
+    //virtual void update(const nvs::Subject * subject) = 0;
+    //virtual void update(const nvs::Subject * subject) override;
 };
 }
 #endif // INTERFACEVIEW_H

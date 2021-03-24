@@ -45,6 +45,7 @@ inline Position toPosition(Direction direction){
     case Direction::DOWN_RIGHT:
         return Position(1, 1);
     }
+    return Position(0, 0);
 }
 
 inline Direction toDirection(Position position){

@@ -2,8 +2,10 @@
 #include "Position.h"
 #include <stdexcept>
 
-using namespace abalone::model;
-using namespace std;
+//using namespace abalone::model;
+//using namespace std;
+
+namespace abalone::model{
 
 Board::Board():
     Board(std::array<std::array<Hexagon, 9>, 9> {{
@@ -16,7 +18,7 @@ Board::Board():
 { Hexagon(HexagonType::EXIST), Hexagon(HexagonType::EXIST), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST), Hexagon(HexagonType::EXIST), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID)},
 { Hexagon(HexagonType::EXIST, false),Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID) },
 { Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::EXIST, false), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID), Hexagon(HexagonType::VOID)},
-          }})
+}})
 
 {}
 
@@ -59,10 +61,10 @@ void Board::updateHexagonState(Position position){
 }
 
 std::string Board::to_string() const{
-    string board = "";
-    std::array<string, 9> Ycoord = {"I", "H", "G", "F", "E", "D", "C", "B", "A"};
-    std::array<string, 9> Xcoord = {"1", "2", "3", "4", "5", "6", "9", "8", "7"};
-    string yAxis = "";
+    std::string board = "";
+    std::array<std::string, 9> Ycoord = {"I", "H", "G", "F", "E", "D", "C", "B", "A"};
+    std::array<std::string, 9> Xcoord = {"1", "2", "3", "4", "5", "6", "9", "8", "7"};
+    std::string yAxis = "";
     int offset = 4;
 
     for(int i = 0; i < getNbRow(); i++){
@@ -101,4 +103,6 @@ std::string Board::to_string() const{
     }
     //board += "\n";
     return board;
+}
+
 }

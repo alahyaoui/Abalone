@@ -17,6 +17,8 @@ SOURCES += \
 
 HEADERS += \
     abalone.controller/Controller.h \
+    abalone.exception/ImpossibleMovementException.h \
+    abalone.exception/InvalidGameStatusException.h \
     abalone.model/Board.h \
     abalone.model/Color.h \
     abalone.model/Direction.h \
@@ -29,6 +31,6 @@ HEADERS += \
     abalone.model/Position.h \
     abalone.model/Subject.h \
     abalone.view/InterfaceView.h \
-    abalone.view/View.h
+    abalone.view/View.h \
 
 DISTFILES +=

@@ -17,6 +17,7 @@ private:
     int _marblesLoss;
 public:
     Player(Color color, PlayerStatus status = PlayerStatus::PROGRESS);
+    Player() = default;
 
     Color color() const;
     PlayerStatus playerStatus() const;

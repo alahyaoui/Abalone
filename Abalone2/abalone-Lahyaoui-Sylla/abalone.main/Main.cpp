@@ -11,10 +11,9 @@ using namespace abalone::view;
 
 
 int main(){
-    /*
     Game game = Game();
     View view = View();
-    Controller controller = Controller(game, view);
-    controller.startGame();*/
+    Controller controller = Controller(&game, &view);
+    controller.startGame();
 }
 

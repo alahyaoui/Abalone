@@ -1,7 +1,9 @@
 #include "Player.h"
 #include "Color.h"
 
-using namespace abalone::model;
+//using namespace abalone::model;
+
+namespace abalone::model{
 
 Player::Player(Color color, PlayerStatus status):
     _color {color},
@@ -33,6 +35,8 @@ std::string Player::to_string(){
            "\ncouleur : " + abalone::model::to_string(this->_color) +
             "\nstatut : " + abalone::model::to_string(this->_status);
 }
+
+}// namespace abalone::model
 
 /*
 std::string to_string(PlayerStatus playerStatus){

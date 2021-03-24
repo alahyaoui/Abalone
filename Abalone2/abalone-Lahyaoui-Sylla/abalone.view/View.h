@@ -8,23 +8,23 @@ namespace abalone::view{
 
 class View: public InterfaceView{
 private:
-    Board _board;
+    abalone::model::Board _board;
 
-    Position askPosition();
+    abalone::model::Position askPosition() override;
 public:
-    View() = default;
-    virtual ~View() = default;
+    //View();
+    //~View();
 
-    void displayBoard();
-    int askMoveType();//Pour mouvement latéral
-    Position askMarblePosition();
-    Position askPositionMove();//Ne pas oublier mouvement latéral
-    std::array<Position, 2> askMarblePositionLateralMove();
-    Position askPositionLateralMove();
-    void displayMessage(std::string message);
-    void displayError(std::string message);
+    void displayBoard() override;
+    int askMoveType() override;
+    abalone::model::Position askMarblePosition() override;
+    abalone::model::Position askPositionMove() override;
+    std::array<abalone::model::Position, 2> askMarblePositionLateralMove() override;
+    abalone::model::Position askPositionLateralMove() override;
+    void displayMessage(std::string message) override;
+    void displayError(std::string message) override;
 
-    void update(const nvs::Subject * subject);
+    void update(const nvs::Subject * subject) override;
 };
 
 }// namespace abalone::view

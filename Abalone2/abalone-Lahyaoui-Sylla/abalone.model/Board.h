@@ -3,9 +3,7 @@
 
 #include <ostream>
 #include <array>
-
 #include "Hexagon.h"
-
 
 namespace abalone::model{
 

@@ -1,7 +1,9 @@
 #include "Position.h"
 #include "Direction.h"
 
-using namespace abalone::model;
+//using namespace abalone::model;
+
+namespace abalone::model{
 
 Position::Position(int x, int y):
     _x {x},
@@ -28,3 +30,5 @@ bool Position::equals(Position otherPosition) const{
 bool Position::operator==(Position otherPosition) const{
     return this->equals(otherPosition);
 }
+
+}// namespace abalone::model

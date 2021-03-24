@@ -1,12 +1,11 @@
 #include "View.h"
-//#include "abalone.model/Board.h"
 #include "abalone.model/Position.h"
-#include "abalone.model/Model.h"
 #include "abalone.model/Game.h"
 
-using namespace abalone::view;
-using namespace abalone::model;
+//using namespace abalone::view;
+//using namespace abalone::model;
 
+namespace abalone::view{
 
 void View::displayBoard(){
     std::cout << _board.to_string() << std::endl;
@@ -18,11 +17,11 @@ Position View::askPosition(){
     int col;
 
     do{
-        std::cout << "Entrez la ligne" << std::endl;
+        std::cout << "Veuillez entrer la ligne, choisissez une lettre entre A et I" << std::endl;
         std::cin >> cRow;
     }while(!(cRow >= 'A' && cRow <= 'I'));
 
-    switch(cRow){
+    switch(std::toupper(cRow)){
     case 'I':
         row = 0;
         break;
@@ -53,7 +52,7 @@ Position View::askPosition(){
     }//Autrement redemander de choisir
 
     do{
-        std::cout << "Entrez la colonne" << std::endl;
+        std::cout << "Veuillez entrer la colonne, choissisez une valeur entre 1 et 9" << std::endl;
         std::cin >> col;
     }while(!(col > 0 && col <= 9));
 
@@ -109,8 +108,22 @@ void View::update(const nvs::Subject * subject){
     //Model * model = (Game*) subject;
     Game * game = (Game*) subject;
     _board = game->board();
+    std::cout << "Update" << std::endl;
 }
+
+//View::View(){};
+//View::~View(){};
+
+}// namespace abalone::view;
 /*
-View::View(){};
-View::~View(){};
-*/
+using namespace abalone::view;
+void Observer::update(const nvs::Subject * subject){
+    //Model * model = (Game*) subject;
+    Game * game = (Game*) subject;
+    View view = View();
+    _board = game->board();
+}*/
+
+
+
+

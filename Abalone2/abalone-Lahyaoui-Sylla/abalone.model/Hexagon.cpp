@@ -1,6 +1,8 @@
 #include "Hexagon.h"
 
-using namespace abalone::model;
+//using namespace abalone::model;
+
+namespace abalone::model{
 
 Hexagon::Hexagon(HexagonType type, bool isFree):
     _isFree {isFree},
@@ -31,3 +33,5 @@ std::string Hexagon::to_string() const{
     }
     return "O ";
 }
+
+}//namespace abalone::model

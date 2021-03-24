@@ -6,8 +6,13 @@
 #include <vector>
 #include <algorithm>
 
-using namespace nvs;
-using namespace abalone::model;
+#include "abalone.exception/ImpossibleMovementException.h"
+#include "abalone.exception/InvalidGameStatusException.h"
+
+//using namespace nvs;
+//using namespace abalone::model;
+
+namespace abalone::model{
 
 void Game::updateStatus(){
     for(size_t i = 0; i < this->_players.size(); i++){
@@ -100,7 +105,7 @@ void Game::initializeMarbles(){
     //std::copy(blackMarbles.begin(), blackMarbles.end(), marbles);
 
     std::copy_n(marbles.begin(), 28, this->_marbles.begin());
-    //std::copy(marbles.begin(), marbles.end(), this->_marbles);
+    //std::copy(marbles.begin(), marbles.end(), this->_marbles);//BUUUUUG!!!!!!!
 
     //this->_marbles = marbles; Ne fonctionne pas erreur compilation
 }
@@ -130,7 +135,7 @@ void Game::move(Position positionOfMarble, Position positionToGo){
                 if(marble.color() == currentPlayerColor()){
                     marble.move(this->_board, positionToGo, this->_marbles);
                 }else{
-                    throw "Vous avez essayé de deplacer une bille adverse !";
+                    throw abalone::exception::ImpossibleMovementException("Vous avez essayé de deplacer une bille adverse !", __FILE__, __FUNCTION__, __LINE__);
                 }
             }
         }
@@ -139,7 +144,7 @@ void Game::move(Position positionOfMarble, Position positionToGo){
         updateStatus();
         notifyObservers();
     }else{
-        throw "The game status isn't in progress !";
+         throw abalone::exception::InvalidGameStatusException("The game status isn't in progress");
     }
 }
 
@@ -172,12 +177,12 @@ void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position
                         if(marble.color() == currentPlayerColor()){//Verifie que l'user n''a pas essayé de deplacer des ou une bille(s) adverses
                             marblesToMove.push_back(marble);
                         }else{
-                            throw "Vous avez essayé de deplacer une bille adverse !";
+                            throw abalone::exception::ImpossibleMovementException("Vous avez essayé de deplacer une bille adverse !", __FILE__, __FUNCTION__, __LINE__);
                         }
                     }
                 }
             }else{
-                throw "Vous n'avez pas choisis convenablement les billes a déplacer";
+                throw abalone::exception::ImpossibleMovementException("Vous n'avez pas choisis convenablement les billes a déplacer", __FILE__, __FUNCTION__, __LINE__);
             }
 
             colToMove = positionToGo.y();//Servira a incrementer la col de la position de déplacement
@@ -191,7 +196,7 @@ void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position
             notifyObservers();
         }
     }else{
-        throw "The game status isn't in progress";
+        throw abalone::exception::InvalidGameStatusException("The game status isn't in progress");
     }
 }
 
@@ -217,3 +222,5 @@ Board Game::board() const{
 std::array<Player, 2> Game::players() const{
     return this->_players;
 }
+
+} //namespace abalone::model

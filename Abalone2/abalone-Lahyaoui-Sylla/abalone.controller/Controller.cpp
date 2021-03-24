@@ -2,16 +2,29 @@
 //#include <exception>
 #include "abalone.model/Player.h"
 #include "abalone.model/Color.h"
+#include "abalone.model/Position.h"
+#include "abalone.exception/InvalidGameStatusException.h"
+#include "abalone.exception/ImpossibleMovementException.h"
 
-using namespace nvs;
-using namespace abalone::controller;
-using namespace abalone::model;
+#include <iostream>
+#include <exception>
 
+//using namespace nvs;
+//using namespace abalone::controller;
+//using namespace abalone::model;
+
+namespace abalone::controller{
 
 Controller::Controller(Model *game, InterfaceView *view):
     _game {game},
     _view {view}
 {}
+/*
+Controller::Controller(Model *game, View *view):
+    _game {game},
+    _view {view}
+{}
+*/
 
 void Controller::startGame(){
     _game->startGame();
@@ -25,12 +38,18 @@ void Controller::startGame(){
     }
     checkLevelStatus();
 }
+
 void Controller::tryMove(){
+    auto marbleToMove  = _view->askMarblePosition();
+    auto positionToGo = _view->askPositionMove();
     try{
-        _game->move(_view->askMarblePosition(), _view->askPositionMove());//Verfier si on me donne une position valide
+        _game->move(marbleToMove, positionToGo);//Verfier si on me donne une position valide
         _game->incRound();//Si ça fonctionne incremente le compteur de round
-    }catch(std::exception e){//Traiter le mouvement impossible
-        _view->displayError("Mouvement impossible");
+    }catch(abalone::exception::ImpossibleMovementException moveException){//Traiter le mouvement impossible
+        _view->displayError(moveException.msg());
+        tryMove();
+    }catch(abalone::exception::InvalidGameStatusException statusException){
+        _view->displayError("Erreur dans le statut de la partie" + statusException.msg());
     }
 }
 
@@ -38,8 +57,11 @@ void Controller::tryMoveLateral(){
     try{
         _game->move(_view->askMarblePosition(), _view->askMarblePosition(), _view->askPositionMove());
         _game->incRound();
-    }catch(std::exception e){//Traiter le mouvement impossible
-        _view->displayError("Mouvement impossible");
+    }catch(abalone::exception::ImpossibleMovementException moveException){//Traiter le mouvement impossible
+        _view->displayError(moveException.msg());
+        tryMove();
+    }catch(abalone::exception::InvalidGameStatusException statusException){
+        _view->displayError("Erreur dans le statut de la partie" + statusException.msg());
     }
 }
 
@@ -65,4 +87,6 @@ void Controller::checkLevelStatus() {
 void Controller::addModelObserver(Observer *observer){
     _game->registerObserver(observer);
 }
+
+}// namespace abalone::controller
 

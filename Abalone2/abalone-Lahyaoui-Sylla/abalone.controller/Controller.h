@@ -3,6 +3,7 @@
 
 #include "abalone.model/Model.h"
 #include "abalone.view/InterfaceView.h"
+//#include "abalone.view/View.h"
 #include "abalone.model/Observer.h"
 
 
@@ -15,6 +16,7 @@ class Controller{
 private:
     Model *_game;//Pointeur ??
     InterfaceView *_view;//Pointeur ??
+    //View *_view;
 
     //Game _game;//Pointeur ??
     //View _view;//Pointeur ??
@@ -23,6 +25,7 @@ private:
     void tryMoveLateral();
 public:
     Controller(Model *game, InterfaceView *view);
+    //Controller(Model *game, View *view);
     void startGame();
     void addModelObserver(Observer * observer);
 };
