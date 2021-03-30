@@ -13,7 +13,7 @@ int main(){
     Game * game = new Game();
     View * view = new View();
     Controller controller = Controller(game, view);
-    controller.addModelObserver(view);
+    controller.addModelObserver(view);//Pourquoi premier tour n'affiche pas avec l'affichage final.
     controller.startGame();
 }
 

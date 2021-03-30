@@ -29,6 +29,7 @@ HEADERS += \
     abalone.exception/InvalidGameStatusException.hpp \
     abalone.exception/MarbleException.hpp \
     abalone.exception/MarbleNotFoundException.hpp \
+    abalone.exception/PlayerNotFoundException.hpp \
     abalone.model/Board.h \
     abalone.model/Color.hpp \
     abalone.model/Direction.hpp \

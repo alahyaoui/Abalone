@@ -26,20 +26,22 @@ void Controller::startGame(){
     //addModelObserver(_view); //DEMANDER AU PROF OU METTRE CETTE LIGNE
     while (_game->gameStatus() == GameStatus::IN_PROGRESS) {
         _view->displayGame();
-        if(_view->askMoveType() == 1){
-            tryMove();
-        }else{
-            tryMoveLateral();
-        }
+        tryMove();
     }
     checkLevelStatus();
 }
 
 void Controller::tryMove(){
-    //auto marbleToMove = _view->askMarblePosition();
-    //auto positionToGo =_view->askPositionMove();
-
     auto move = _view->askMove();
+    if(move.size() == 2){
+        tryRegularMove(move);
+    }else if(move.size() == 3){
+        tryLateralMove(move);
+    }
+}
+
+void Controller::tryRegularMove(std::vector<Position> move){
+
     auto marbleToMove = move.at(0);
     auto positionToGo = move.at(1);
 
@@ -58,13 +60,8 @@ void Controller::tryMove(){
     }
 }
 
-void Controller::tryMoveLateral(){
-    //auto marblesToMove = _view->askMarblePositionLateralMove();
-    //auto marbletoMove1 = marblesToMove.at(0);
-    //auto marbletoMove2 = marblesToMove.at(1);
-    //auto positionToGo = _view->askPositionLateralMove();
+void Controller::tryLateralMove(std::vector<Position> lateralMove){
 
-    auto lateralMove = _view->askLateralMove();
     auto marbletoMove1 = lateralMove.at(0);
     auto marbletoMove2 = lateralMove.at(1);
     auto positionToGo = lateralMove.at(2);
@@ -74,10 +71,10 @@ void Controller::tryMoveLateral(){
         _game->incRound();
     }catch(abalone::exception::MarbleException marbleException){
         _view->displayError(marbleException.to_string());
-        tryMoveLateral();
+        tryMove();
     }catch(abalone::exception::DirectionException directionException){
         _view->displayError(directionException.to_string());
-        tryMoveLateral();
+        tryMove();
     }catch(abalone::exception::InvalidGameStatusException statusException){
         _view->displayError(statusException.to_string());
         exit(0);

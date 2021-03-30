@@ -223,6 +223,7 @@ Makefile: ../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro ../../../Informat
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/qt_config.prf \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/win32-g++/qmake.conf \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/exclusive_builds.prf \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/toolchain.prf \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/default_pre.prf \
@@ -241,7 +242,6 @@ Makefile: ../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro ../../../Informat
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/yacc.prf \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/lex.prf \
 		../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro \
-		.qmake.stash \
 		../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\abalone-Lahyaoui-Sylla\abalone-Lahyaoui-Sylla.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/spec_pre.prf:
@@ -397,6 +397,7 @@ Makefile: ../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro ../../../Informat
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/qt_config.prf:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/win32-g++/qmake.conf:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/exclusive_builds.prf:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/toolchain.prf:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/default_pre.prf:
@@ -415,7 +416,6 @@ Makefile: ../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro ../../../Informat
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/yacc.prf:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/lex.prf:
 ../abalone-Lahyaoui-Sylla/abalone-Lahyaoui-Sylla.pro:
-.qmake.stash:
 ../../../Informatique/IDE/Qt/5.15.1/mingw81_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\abalone-Lahyaoui-Sylla\abalone-Lahyaoui-Sylla.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

@@ -32,7 +32,7 @@ std::string Hexagon::to_string() const{
     }else if (!this->_isFree){
         return "* ";
     }
-    return "O ";
+    return ". ";
 }
 
 }//namespace abalone::model

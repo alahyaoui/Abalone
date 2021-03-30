@@ -29,9 +29,14 @@ private:
     void tryMove();
 
     /**
-     * @brief tryMoveLateral method, tries a lateral move.
+     * @brief tryRegularMove method, tries a move.
      */
-    void tryMoveLateral();
+    void tryRegularMove(std::vector<Position> move);
+
+    /**
+     * @brief tryLateralMove method, tries a lateral move.
+     */
+    void tryLateralMove(std::vector<Position> lateralMove);
 
 public:
 

@@ -8,7 +8,8 @@
 
 #include "abalone.exception/ImpossibleMovementException.hpp"
 #include "abalone.exception/InvalidGameStatusException.hpp"
-#include "abalone.exception/MarbleNotFoundException.hpp"//POURQUOI une erreur!!!!!!!!!!!!!
+#include "abalone.exception/MarbleNotFoundException.hpp"
+#include "abalone.exception/PlayerNotFoundException.hpp"
 
 //using namespace nvs;
 //using namespace abalone::model;
@@ -20,6 +21,7 @@ void Game::startGame(){
     initializeMarbles();
     this->_board = Board();
     initializePlayers();
+    notifyObservers();
 }
 
 void Game::updateStatus(){
@@ -122,7 +124,7 @@ void Game::initializePlayers(){
     */
 }
 
-Color Game::currentPlayerColor(){
+Color Game::currentPlayerColor() const{
     Color currentPlayerColor;
     if(_currentRound % 2 == 0){
         currentPlayerColor = Color::BLACK;
@@ -172,15 +174,36 @@ void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position
         rowMarble2 = positionOfMarble2.x();
         colMarble1 = positionOfMarble1.y();
         colMarble2 = positionOfMarble2.y();
+        if(rowMarble1 == positionToGo.x()){
+            throw abalone::exception::ImpossibleMovementException("Mouvement latéral impossible, "
+                                                                  "vous avez choisis le mauvais type de mouvement !",
+                                                                  __FILE__, __FUNCTION__, __LINE__);
+        }
         if(rowMarble1 == rowMarble2){ /*&& (col1 - col2 < 0 && col1 - col2 > -3) */ //peut aussi rajouter mouvement lateral de droite a gauche pr le choix des billes
             if(colMarble1 - colMarble2 == -1){
                 for(Marble * marble : this->_marbles){
+
+                    if(marble->positionOnBoard() == Position(positionToGo.x(), positionToGo.y())//Verifie si deja des billes la ou on veut aller.
+                            || marble->positionOnBoard() == Position(positionToGo.x(), positionToGo.y() + 1)){
+                        throw abalone::exception::ImpossibleMovementException("Mouvement latéral impossible,"
+                                                                              " billes sur le chemin!",
+                                                                              __FILE__, __FUNCTION__, __LINE__);
+                    }
+
                     if(marble->positionOnBoard() == positionOfMarble1 || marble->positionOnBoard() == positionOfMarble2){
                         marblesToMove.push_back(marble);
                     }
+
                 }
             }else if(colMarble1 - colMarble2 == -2){
                 for(auto marble : this->_marbles){
+
+                    if(marble->positionOnBoard() == Position(positionToGo.x(), positionToGo.y())//Verifie si deja des billes la ou on veut aller.
+                            || marble->positionOnBoard() == Position(positionToGo.x(), positionToGo.y() + 1)
+                            || marble->positionOnBoard() == Position(positionToGo.x(), positionToGo.y() + 2)){
+                        throw abalone::exception::ImpossibleMovementException("Billes sur le chemin, mouvement latéral impossible !", __FILE__, __FUNCTION__, __LINE__);
+                    }
+
                     if(marble->positionOnBoard() == positionOfMarble1
                             || marble->positionOnBoard() == Position(rowMarble1, colMarble1+1)
                             || marble->positionOnBoard() == positionOfMarble2){//Si egale a position1 position2 ou position entredeux
@@ -191,6 +214,7 @@ void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position
                             throw abalone::exception::ImpossibleMovementException("Vous avez essayé de deplacer une bille adverse !", __FILE__, __FUNCTION__, __LINE__);
                         }
                     }
+
                 }
             }else{
                 throw abalone::exception::ImpossibleMovementException("Vous n'avez pas choisis convenablement les billes a déplacer !", __FILE__, __FUNCTION__, __LINE__);
@@ -200,9 +224,9 @@ void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position
             colToMove = positionToGo.y();//Servira a incrementer la col de la position de déplacement
             for(auto marble : marblesToMove){//On peut verifier si je deplace les billes dans le bonne ordre mais la façon dont les billes sont dans le tableaux ne devraient pas poser de probleme
                 if(marble->color() == Color::NONE){
-                    throw abalone::exception::ImpossibleMovementException("une des billes que vous avez essayé de deplacer n'existe pas !", __FILE__, __FUNCTION__, __LINE__);//CHANGER TYPE D ERREUR!!!
+                    throw abalone::exception::MarbleNotFoundException("une des billes que vous avez essayé de deplacer n'existe pas !", __FILE__, __FUNCTION__, __LINE__);
                 }else{
-                    marble->move(this->_board, Position(positionToGo.x(), colToMove), this->_marbles);
+                    marble->lateralMove(this->_board, Position(positionToGo.x(), colToMove));
                     colToMove++;
                 }
             }
@@ -229,12 +253,24 @@ int Game::currentRound() const{
 }
 
 
+int Game::currentPlayerMarblesLoss() const{
+    for(size_t i = 0; i < this->_players.size(); i++){
+        if(this->_players.at(i).color() == currentPlayerColor())
+            return this->_players.at(i).marblesLoss();
+    }
+    throw abalone::exception::PlayerNotFoundException("Aucun joueur ne correspondant n'a ete trouve !",  __FILE__, __FUNCTION__, __LINE__);
+}
+
 GameStatus Game::gameStatus() const{
     return _status;
 }
 
 Board Game::board() const{
     return _board;
+}
+
+std::array<Marble*, 28> Game::marbles() const{
+    return this->_marbles;
 }
 
 std::array<Player, 2> Game::players() const{

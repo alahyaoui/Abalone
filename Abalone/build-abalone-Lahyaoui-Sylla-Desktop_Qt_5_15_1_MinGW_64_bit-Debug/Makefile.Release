@@ -88,6 +88,7 @@ DIST          =  abalone.controller/Controller.h \
 		abalone.exception/InvalidGameStatusException.hpp \
 		abalone.exception/MarbleException.hpp \
 		abalone.exception/MarbleNotFoundException.hpp \
+		abalone.exception/PlayerNotFoundException.hpp \
 		abalone.model/Board.h \
 		abalone.model/Color.hpp \
 		abalone.model/Direction.hpp \
@@ -213,7 +214,8 @@ release/Game.o: ../abalone-Lahyaoui-Sylla/abalone.model/Game.cpp ../abalone-Lahy
 		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleException.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.exception/AbaloneException.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.exception/InvalidGameStatusException.hpp \
-		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleNotFoundException.hpp
+		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleNotFoundException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/PlayerNotFoundException.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Game.o ..\abalone-Lahyaoui-Sylla\abalone.model\Game.cpp
 
 release/Hexagon.o: ../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.cpp ../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.h
@@ -292,11 +294,11 @@ release/View.o: ../abalone-Lahyaoui-Sylla/abalone.view/View.cpp ../abalone-Lahya
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Board.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.h \
+		../abalone-Lahyaoui-Sylla/abalone.model/Marble.h \
+		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.model/Game.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Model.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Marble.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.model/Player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\View.o ..\abalone-Lahyaoui-Sylla\abalone.view\View.cpp
 

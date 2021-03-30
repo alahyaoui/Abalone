@@ -60,7 +60,7 @@ private:
      *
      * @return the color of the current player.
      */
-    Color currentPlayerColor();
+    Color currentPlayerColor() const;
 
 public:
 
@@ -100,6 +100,12 @@ public:
     int currentRound() const;
 
     /**
+     * @brief currentPlayerMarblesLoss method returns the marbleLoss of the currentPlayer..
+     * @return currentPlayerMarblesLoss an integer.
+     */
+    int currentPlayerMarblesLoss() const;
+
+    /**
      * @brief gameStatus method a simple getter of _status.
      * @return _status a GameStatus.
      */
@@ -110,6 +116,12 @@ public:
      * @return _board a Board.
      */
     Board board() const;
+
+    /**
+     * @brief marbles method a simple getter of _marbles.
+     * @return _marbles an array of Marbles.
+     */
+    std::array<Marble*, 28> marbles() const;
 
     /**
      * @brief players method a simple getter of _players.

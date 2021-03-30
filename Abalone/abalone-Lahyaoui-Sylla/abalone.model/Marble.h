@@ -42,6 +42,14 @@ public:
     void move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);//Rajouter mouvement latéral
 
     /**
+     * @brief lateralMove method, moves laterally the marble if it's possible.
+     * @param board a Board.
+     * @param positionToGo a Position.
+     * @param marbles an array of Marbles.
+     */
+    void lateralMove(Board & board, Position positionToGo);
+
+    /**
      * @brief moveFree method, changes the isFree attribute of the hexagons
      * where the marble was located and where the marble will move
      * and finally moves the marble.
@@ -62,7 +70,7 @@ public:
      * @param nextEnemyPosition the position where the next oppos marble will be pushed.
      * @param marbles an array of marbles.
      */
-    void moveAndPush(Board & board, Position positionToGo, Position nextPosition, Position nextEnemyPosition, std::array<Marble*, 28> & marbles);
+    void moveAndPush(Board & board, Position positionToGo, Position nextEnemyPosition, std::array<Marble*, 28> & marbles);
 
     /**
      * @brief moveAndPushInVoid method, changes the isFree attribute of the hexagons
@@ -75,7 +83,7 @@ public:
      * @param nextEnemyPosition the position where the next oppos marble will be pushed.
      * @param marbles an array of marbles.
      */
-    void moveAndPushInVoid(Board & board, Position positionToGo, Position nextPosition, std::array<Marble*, 28> & marbles);
+    void moveAndPushInVoid(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);
 
     /**
      * @brief positionOnBoard method a simple getter of _positionOnBoard.
@@ -100,6 +108,12 @@ public:
      * @param position a Position.
      */
     void positionOnBoard(Position position);
+
+    /**
+     * @brief to_string method, converts a marble into a string.
+     * @return the string materialization of a marble.
+     */
+    std::string to_string();
 };
 
 
