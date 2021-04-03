@@ -65,13 +65,6 @@ vendredi 19 février 2021 à 18h00.
 ![alt text](Mode%20d'emploi/Image/AbaloneExecution.png?raw=true)
 
 **Notation des coups ABA-PRO**
-Afin de décrire un coup (déplacement, mouvement) dans une partie d'Abalone, il existe une
-notation textuelle appelée ABA-PRO . Celle-ci peut s'avérer utile comme entrée utilisateur des
-coups en mode console. À l'instar de la notation algébrique aux échecs ou aux dames, on note la
-position d'un hexagone sur la grille grâce à une lettre et un chire. Une grille Abalone peut en
-effet se voir comme une grille à deux dimensions. La lettre indique la ligne et le chiffre indique
-la "colonne" oblique de l'hexagone. Par exemple, sur
-la figure 4, la bille notée X est en position G5 (ligne G, colonne 5).
 
 - Les mouvements au jeu Abalone peuvent être de deux types :
 Déplacement en ligne : quand on déplace une bille (ou plusieurs) dans une direction.
