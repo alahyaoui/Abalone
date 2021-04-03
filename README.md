@@ -61,7 +61,7 @@ vendredi 19 février 2021 à 18h00.
 ***Execution*** : Ouvrir le projet avec QTcreator, compiler puis executer.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
-![alt text](Mode d'emploi/AbaloneExecution.PNG?raw=true)
+![alt text](Mode%20d'emploi/AbaloneExecution.PNG?raw=true)
 
 ###### Date de remise:
 vendredi 2 avril 2021 à 18h00.
