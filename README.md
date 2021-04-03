@@ -64,6 +64,40 @@ vendredi 19 février 2021 à 18h00.
 
 ![alt text](Mode%20d'emploi/Image/AbaloneExecution.png?raw=true)
 
+**Notation des coups ABA-PRO**
+Afin de décrire un coup (déplacement, mouvement) dans une partie d'Abalone, il existe une
+notation textuelle appelée ABA-PRO . Celle-ci peut s'avérer utile comme entrée utilisateur des
+coups en mode console. À l'instar de la notation algébrique aux échecs ou aux dames, on note la
+position d'un hexagone sur la grille grâce à une lettre et un chire. Une grille Abalone peut en
+effet se voir comme une grille à deux dimensions. La lettre indique la ligne et le chiffre indique
+la "colonne" oblique de l'hexagone. Par exemple, sur
+la figure 4, la bille notée X est en position G5 (ligne G, colonne 5).
+
+- Les mouvements au jeu Abalone peuvent être de deux types :
+Déplacement en ligne : quand on déplace une bille (ou plusieurs) dans une direction.
+On indique un tel mouvement par la position de départ suivie de la position d'arrivée de
+la bille (à l'instar des échecs/dames). Si on déplace un groupe de billes (qu'il y ait des
+billes adverses poussées ou non) on décrit toujours le déplacement de la bille en "queue"
+du mouvement. C'est-à-dire celle sur laquelle on pousserait pour eectuer ce déplacement.
+Par exemple, le mouvement I8H7, illustré sur la figure 5(a), dénote le déplacement de la
+bille de la position I8 à la position H7. Le déplacement de cette bille correspond en fait
+au déplacement de tout un groupe de trois billes blanches (on pousse le groupe d'une case
+dans une direction).
+
+- Déplacement latéral : quand on déplace deux ou trois billes latéralement.
+Un tel mouvement est indiqué par la position de la première bille du groupe, suivie de
+la position de la dernière bille du groupe, et enfin suivie de la position d'arrivée de la
+première bille mentionnée. Par exemple, le mouvement C3C5D3, illustré sur la figure 5(b),
+dénote le déplacement du groupe de trois billes entre C3 et C5 vers la position où la
+première se trouve en D3.
+
+Remarque : notez que la notation des positions dans ce système vous fournit également une
+alternative au système de coordonnées à trois axes. Vous avez ici un système de coordonnées de
+la grille hexagonale à deux axes. La transformation des coordonnées d'un système à l'autre est
+élémentaire.
+
+**Confer : Page 9-10 de l'énoncé du projet Abalone 2020-2021 Esi He2b**
+
 ###### Date de remise:
 vendredi 2 avril 2021 à 18h00.
 
