@@ -58,7 +58,10 @@ Groupe: D122.
 vendredi 19 février 2021 à 18h00.
 
 ## Implémentation Console:
-//TODO Rapport Implémentation console.
+***Execution*** : Ouvrir le projet avec QTcreator, compiler puis executer.
+
+***Utilisation***: Le projet respecte la notation ABA-PRO.
+
 ###### Date de remise:
 vendredi 2 avril 2021 à 18h00.
 
