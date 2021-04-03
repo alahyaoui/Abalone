@@ -51,7 +51,9 @@ bool Board::isInside(Position position) const{
 bool Board::isHexagonFree(Position position) const{
     int row = position.x();
     int column = position.y();
-    return this->_hexagons[row][column].isFree();
+    if(this->isInside(position))
+        return this->_hexagons[row][column].isFree();
+    return true;
 }
 
 void Board::updateHexagonState(Position position){

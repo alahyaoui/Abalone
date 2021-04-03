@@ -56,7 +56,6 @@ void Controller::tryRegularMove(std::vector<Position> move){
         tryMove();
     }catch(abalone::exception::InvalidGameStatusException statusException){
         _view->displayError(statusException.to_string());
-        exit(0);
     }
 }
 
@@ -77,7 +76,6 @@ void Controller::tryLateralMove(std::vector<Position> lateralMove){
         tryMove();
     }catch(abalone::exception::InvalidGameStatusException statusException){
         _view->displayError(statusException.to_string());
-        exit(0);
     }
 }
 

@@ -67,6 +67,13 @@ public:
     bool operator==(Position otherPosition) const;
 
     /**
+     * @brief operator != checks the inequality between two Position.
+     * @param otherPosition a Position.
+     * @return a boolean.
+     */
+    bool operator!=(Position otherPosition) const;
+
+    /**
      * @brief to_string method, converts a Position into a string.
      * @return the string materialization of a Position.
      */

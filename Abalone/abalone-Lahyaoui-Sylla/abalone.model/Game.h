@@ -10,7 +10,7 @@
 #include "Player.h"
 
 
-using namespace nvs;
+//using namespace nvs;
 
 namespace abalone::model{
 

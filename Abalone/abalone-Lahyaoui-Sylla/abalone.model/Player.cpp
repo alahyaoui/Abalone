@@ -7,7 +7,8 @@ namespace abalone::model{
 
 Player::Player(Color color, PlayerStatus status):
     _color {color},
-    _status {status}
+    _status {status},
+    _marblesLoss {0}
 {}
 
 Color Player::color() const{

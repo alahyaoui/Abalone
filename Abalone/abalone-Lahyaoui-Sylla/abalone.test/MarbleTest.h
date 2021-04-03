@@ -8,11 +8,24 @@ namespace abalone::test {
 class MarbleTest: public AbaloneTest{
 public:
 
-    void moveTest();
-    void moveFreeTest();
-    void moveAndPushTest();
-    void moveAndPushInVoidTest();
 
+    static void moveFreeTest();
+    static void moveAndPushTest();
+    static void moveAndPushInVoidTest();
+
+    static void moveGeneral_Free_Test();
+
+    static void moveGeneral_NotFree_Test();
+
+    static void moveGeneral_NotFree_FailPush_Test();
+
+    static void moveGeneral_NotFree_SucessPush_Test();
+
+    static void moveGeneral_NotFree_FailPush_InVoid_Test();
+
+    static void moveGeneral_NotFree_SucessPush_InVoid_Test();
+
+    //static void moveTest();
 private:
 };
 

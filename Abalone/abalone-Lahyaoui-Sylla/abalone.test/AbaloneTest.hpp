@@ -21,6 +21,7 @@ inline void AbaloneTest::assertTrue(bool res, std::string testName) {
     }else{
         std::cout << "Test " << testName << " echoue" << std::endl;
     }
+    std::cout << std::endl;
 }
 
 /*

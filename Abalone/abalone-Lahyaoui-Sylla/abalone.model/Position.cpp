@@ -34,6 +34,10 @@ bool Position::operator==(Position otherPosition) const{
     return this->equals(otherPosition);
 }
 
+bool Position::operator!=(Position otherPosition) const{
+    return !(this->equals(otherPosition));
+}
+
 std::string Position::to_string() const{
     return "(" + std::to_string(_x) + "," + std::to_string(_y) + ")";
 }

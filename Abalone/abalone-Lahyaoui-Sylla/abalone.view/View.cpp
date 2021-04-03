@@ -124,7 +124,7 @@ std::vector<Position> View::askMove() const{
             }
         }
 
-    }while(pos.size() == 4 || pos.size() == 6);
+    }while(pos.size() != 4 || pos.size() != 6);
 
     throw abalone::exception::ImpossibleMovementException("Mouvement impossible, vous avez mal enregistré le mouvement !",
                                                        __FILE__, __FUNCTION__, __LINE__);
