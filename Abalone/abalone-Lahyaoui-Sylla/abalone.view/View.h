@@ -7,6 +7,10 @@
 
 namespace abalone::view{
 
+/**
+ * @brief The View class, is dedicated to the display of the game board and prepares the user's
+ * entries.
+ */
 class View: public InterfaceView{
 private:
     abalone::model::Board _board;

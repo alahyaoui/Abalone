@@ -39,7 +39,7 @@ public:
      * @param positionToGo a Position.
      * @param marbles an array of Marbles.
      */
-    void move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);//Rajouter mouvement latéral
+    void move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);
 
     /**
      * @brief lateralMove method, moves laterally the marble if it's possible.

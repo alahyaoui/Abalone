@@ -56,7 +56,8 @@ inline Position toPosition(Direction direction){
         //case Direction::DOWN_RIGHT:
         //    return Position(1, 1);
     default:
-        throw abalone::exception::InvalidDirectionException("La direction entrée en paramètre est invalide !",  __FILE__, __FUNCTION__, __LINE__);
+        throw abalone::exception::InvalidDirectionException("La direction entrée en paramètre est invalide !",
+                                                            __FILE__, __FUNCTION__, __LINE__);
     }
     return Position(0, 0);
 }
@@ -86,7 +87,9 @@ inline Direction toDirection(Position position){
         //    direction = Direction::DOWN_RIGHT;
     }else{
         //std::cout << "La position : " << position.to_string() << std::endl;
-        throw abalone::exception::DirectionNotFoundException("La conversion de position à direction est impossible, vous avez essayé de faire un mouvement non autorisé !",  __FILE__, __FUNCTION__, __LINE__);
+        throw abalone::exception::DirectionNotFoundException("La conversion de position à direction est impossible, "
+                                                             "vous avez essayé de faire un mouvement non autorisé !",
+                                                             __FILE__, __FUNCTION__, __LINE__);
     }
     return direction;
 }
@@ -155,7 +158,9 @@ inline std::string to_string(Direction direction){
         //    strDirection = "DOWN_RIGHT";
         //    break;
     default:
-        throw abalone::exception::DirectionNotFoundException("L'affichage d'une direction non existante est impossible !",  __FILE__, __FUNCTION__, __LINE__);
+        throw abalone::exception::DirectionNotFoundException("L'affichage d'une direction "
+                                                             "non existante est impossible !",
+                                                             __FILE__, __FUNCTION__, __LINE__);
     }
     return strDirection;
 }

@@ -32,7 +32,7 @@ void Game::updateStatus(){
     }
 }
 
-void Game::updateMarblesLoss(){//Pas optimal cherché un moyen d'optimiser cela !!!
+void Game::updateMarblesLoss(){
     int countWhiteLoss = 0;
     int countBlackLoss = 0;
     for(auto marble : this->_marbles){
@@ -59,7 +59,7 @@ void Game::updatePlayerStatus(){
         if(this->_players.at(i).marblesLoss() == 6){
             this->_players.at(i).playerStatus(PlayerStatus::FAIL);
             if(i == 0){
-                this->_players.at(i+1).playerStatus(PlayerStatus::WIN);//TABLEAUX DE POINTEUR DE JOEUR ????
+                this->_players.at(i+1).playerStatus(PlayerStatus::WIN);
             }else{
                 this->_players.at(i-1).playerStatus(PlayerStatus::WIN);
             }
@@ -161,7 +161,7 @@ void Game::move(Position positionOfMarble, Position positionToGo){
     }
 }
 
-void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position positionToGo){//ERREUR QUAND J ESSAI DE DEPLACER DIRECTION INCORECT !!!!!!!!!
+void Game::move(Position positionOfMarble1, Position positionOfMarble2, Position positionToGo){
     std::vector<Marble*> marblesToMove {};
 
     int rowMarble1;

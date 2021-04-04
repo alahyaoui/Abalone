@@ -1,7 +1,8 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "Subject.h"
+//#include "Subject.h"
+#include "abalone.observer/Subject.h"
 #include <array>
 
 using namespace nvs;

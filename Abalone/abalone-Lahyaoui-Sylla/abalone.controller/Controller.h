@@ -4,7 +4,8 @@
 #include "abalone.model/Model.h"
 #include "abalone.view/InterfaceView.h"
 //#include "abalone.view/View.h"
-#include "abalone.model/Observer.h"
+//#include "abalone.model/Observer.h"
+#include "abalone.observer/Observer.h"
 
 
 using namespace abalone::model;
@@ -12,6 +13,10 @@ using namespace abalone::view;
 
 namespace abalone::controller{
 
+/**
+ * @brief The Controller class, is the class responsible
+ * for the game dynamics and the update of sight as you go.
+ */
 class Controller{
 private:
     Model *_game;

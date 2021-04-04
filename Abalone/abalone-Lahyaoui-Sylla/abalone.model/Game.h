@@ -4,7 +4,7 @@
 #include <array>
 
 #include "Model.h"
-#include "Subject.h"
+//#include "abalone.observer/Subject.h"
 #include "Marble.h"
 #include "Board.h"
 #include "Player.h"
@@ -14,13 +14,16 @@
 
 namespace abalone::model{
 
+/**
+ * @brief The Game class, gathers the elements necessary for the game to present facade to the view.
+ */
 class Game: public Model{
 private:
     int _currentRound;//Compteur de round IMPORTANT !!!! PERMETTRE DE CONNAITRE LE TOUR DU JOUEUR
     std::array<Marble*, 28> _marbles;
     //std::vector<Marble> _marbles;//Vector prcq erreur compilation si j'essai de copier un vector dans un tableau
     std::array<Player, 2> _players;
-    GameStatus _status = GameStatus::NOT_STARTED;//Erreur default constructor pour les autres arg quand j'utilises le constructeur Game
+    GameStatus _status = GameStatus::NOT_STARTED;
     Board _board;
 
     /**

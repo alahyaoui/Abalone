@@ -58,7 +58,7 @@ SOURCES       = ..\abalone-Lahyaoui-Sylla\abalone.controller\Controller.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Marble.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Player.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Position.cpp \
-		..\abalone-Lahyaoui-Sylla\abalone.model\Subject.cpp \
+		..\abalone-Lahyaoui-Sylla\abalone.observer\Subject.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\BoardTest.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\DirectionTest.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\MarbleTest.cpp \
@@ -96,10 +96,10 @@ DIST          =  abalone.controller/Controller.h \
 		abalone.model/Hexagon.h \
 		abalone.model/Marble.h \
 		abalone.model/Model.h \
-		abalone.model/Observer.h \
 		abalone.model/Player.h \
 		abalone.model/Position.h \
-		abalone.model/Subject.h \
+		abalone.observer/Observer.h \
+		abalone.observer/Subject.h \
 		abalone.test/AbaloneTest.hpp \
 		abalone.test/BoardTest.h \
 		abalone.test/DirectionTest.h \
@@ -114,7 +114,7 @@ DIST          =  abalone.controller/Controller.h \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Marble.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Player.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.model\Position.cpp \
-		..\abalone-Lahyaoui-Sylla\abalone.model\Subject.cpp \
+		..\abalone-Lahyaoui-Sylla\abalone.observer\Subject.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\BoardTest.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\DirectionTest.cpp \
 		..\abalone-Lahyaoui-Sylla\abalone.test\MarbleTest.cpp \
@@ -169,9 +169,9 @@ compiler_clean:
 
 debug/Controller.o: ../abalone-Lahyaoui-Sylla/abalone.controller/Controller.cpp ../abalone-Lahyaoui-Sylla/abalone.controller/Controller.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Model.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Subject.h \
 		../abalone-Lahyaoui-Sylla/abalone.view/InterfaceView.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Observer.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Observer.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Player.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
@@ -183,7 +183,7 @@ debug/Controller.o: ../abalone-Lahyaoui-Sylla/abalone.controller/Controller.cpp 
 
 debug/Main.o: ../abalone-Lahyaoui-Sylla/abalone.main/Main.cpp ../abalone-Lahyaoui-Sylla/abalone.model/Game.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Model.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Subject.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Marble.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
@@ -192,7 +192,7 @@ debug/Main.o: ../abalone-Lahyaoui-Sylla/abalone.main/Main.cpp ../abalone-Lahyaou
 		../abalone-Lahyaoui-Sylla/abalone.model/Player.h \
 		../abalone-Lahyaoui-Sylla/abalone.controller/Controller.h \
 		../abalone-Lahyaoui-Sylla/abalone.view/InterfaceView.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Observer.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Observer.h \
 		../abalone-Lahyaoui-Sylla/abalone.view/View.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Main.o ..\abalone-Lahyaoui-Sylla\abalone.main\Main.cpp
 
@@ -203,7 +203,7 @@ debug/Board.o: ../abalone-Lahyaoui-Sylla/abalone.model/Board.cpp ../abalone-Lahy
 
 debug/Game.o: ../abalone-Lahyaoui-Sylla/abalone.model/Game.cpp ../abalone-Lahyaoui-Sylla/abalone.model/Game.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Model.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Subject.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Marble.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
@@ -248,9 +248,9 @@ debug/Position.o: ../abalone-Lahyaoui-Sylla/abalone.model/Position.cpp ../abalon
 		../abalone-Lahyaoui-Sylla/abalone.exception/InvalidDirectionException.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Position.o ..\abalone-Lahyaoui-Sylla\abalone.model\Position.cpp
 
-debug/Subject.o: ../abalone-Lahyaoui-Sylla/abalone.model/Subject.cpp ../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Observer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Subject.o ..\abalone-Lahyaoui-Sylla\abalone.model\Subject.cpp
+debug/Subject.o: ../abalone-Lahyaoui-Sylla/abalone.observer/Subject.cpp ../abalone-Lahyaoui-Sylla/abalone.observer/Subject.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Observer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Subject.o ..\abalone-Lahyaoui-Sylla\abalone.observer\Subject.cpp
 
 debug/BoardTest.o: ../abalone-Lahyaoui-Sylla/abalone.test/BoardTest.cpp ../abalone-Lahyaoui-Sylla/abalone.test/BoardTest.h \
 		../abalone-Lahyaoui-Sylla/abalone.test/AbaloneTest.hpp \
@@ -275,7 +275,11 @@ debug/MarbleTest.o: ../abalone-Lahyaoui-Sylla/abalone.test/MarbleTest.cpp ../aba
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.model/Board.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.h
+		../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.h \
+		../abalone-Lahyaoui-Sylla/abalone.exception/ImpossibleMovementException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/AbaloneException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleNotFoundException.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\MarbleTest.o ..\abalone-Lahyaoui-Sylla\abalone.test\MarbleTest.cpp
 
 debug/PositionTest.o: ../abalone-Lahyaoui-Sylla/abalone.test/PositionTest.cpp ../abalone-Lahyaoui-Sylla/abalone.test/PositionTest.h \
@@ -290,7 +294,7 @@ debug/PositionTest.o: ../abalone-Lahyaoui-Sylla/abalone.test/PositionTest.cpp ..
 
 debug/View.o: ../abalone-Lahyaoui-Sylla/abalone.view/View.cpp ../abalone-Lahyaoui-Sylla/abalone.view/View.h \
 		../abalone-Lahyaoui-Sylla/abalone.view/InterfaceView.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Observer.h \
+		../abalone-Lahyaoui-Sylla/abalone.observer/Observer.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Position.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Board.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Hexagon.h \
@@ -298,8 +302,11 @@ debug/View.o: ../abalone-Lahyaoui-Sylla/abalone.view/View.cpp ../abalone-Lahyaou
 		../abalone-Lahyaoui-Sylla/abalone.model/Color.hpp \
 		../abalone-Lahyaoui-Sylla/abalone.model/Game.h \
 		../abalone-Lahyaoui-Sylla/abalone.model/Model.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Subject.h \
-		../abalone-Lahyaoui-Sylla/abalone.model/Player.h
+		../abalone-Lahyaoui-Sylla/abalone.observer/Subject.h \
+		../abalone-Lahyaoui-Sylla/abalone.model/Player.h \
+		../abalone-Lahyaoui-Sylla/abalone.exception/ImpossibleMovementException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/MarbleException.hpp \
+		../abalone-Lahyaoui-Sylla/abalone.exception/AbaloneException.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\View.o ..\abalone-Lahyaoui-Sylla\abalone.view\View.cpp
 
 ####### Install

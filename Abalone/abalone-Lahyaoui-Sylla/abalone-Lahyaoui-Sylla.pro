@@ -12,7 +12,7 @@ SOURCES += \
         abalone.model/Marble.cpp \
         abalone.model/Player.cpp \
         abalone.model/Position.cpp \
-        abalone.model/Subject.cpp \
+        abalone.observer/Subject.cpp \
         abalone.test/BoardTest.cpp \
         abalone.test/DirectionTest.cpp \
         abalone.test/MarbleTest.cpp \
@@ -37,10 +37,10 @@ HEADERS += \
     abalone.model/Hexagon.h \
     abalone.model/Marble.h \
     abalone.model/Model.h \
-    abalone.model/Observer.h \
     abalone.model/Player.h \
     abalone.model/Position.h \
-    abalone.model/Subject.h \
+    abalone.observer/Observer.h \
+    abalone.observer/Subject.h \
     abalone.test/AbaloneTest.hpp \
     abalone.test/BoardTest.h \
     abalone.test/DirectionTest.h \

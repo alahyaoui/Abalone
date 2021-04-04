@@ -5,7 +5,7 @@
 #include <array>
 #include <vector>
 
-#include "abalone.model/Observer.h"
+#include "abalone.observer/Observer.h"
 #include "abalone.model/Position.h"
 
 //using namespace nvs;
@@ -13,6 +13,9 @@ using namespace abalone::model;
 
 namespace abalone::view{
 
+/**
+ * @brief The virtual InterfaceView class, specifies which methods should be in the view.
+ */
 class InterfaceView: public nvs::Observer{
 private:
 public:
