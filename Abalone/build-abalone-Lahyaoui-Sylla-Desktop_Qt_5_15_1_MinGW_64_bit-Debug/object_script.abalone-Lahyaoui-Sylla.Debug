@@ -9,6 +9,7 @@ debug/Position.o
 debug/Subject.o
 debug/BoardTest.o
 debug/DirectionTest.o
+debug/GameTest.o
 debug/MarbleTest.o
 debug/PositionTest.o
 debug/View.o

@@ -10,7 +10,9 @@ public:
 
 
     static void moveFreeTest();
+
     static void moveAndPushTest();
+
     static void moveAndPushInVoidTest();
 
     static void moveGeneral_Free_Test();

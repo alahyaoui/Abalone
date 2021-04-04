@@ -15,6 +15,7 @@ SOURCES += \
         abalone.observer/Subject.cpp \
         abalone.test/BoardTest.cpp \
         abalone.test/DirectionTest.cpp \
+        abalone.test/GameTest.cpp \
         abalone.test/MarbleTest.cpp \
         abalone.test/PositionTest.cpp \
         abalone.view/View.cpp
@@ -44,6 +45,7 @@ HEADERS += \
     abalone.test/AbaloneTest.hpp \
     abalone.test/BoardTest.h \
     abalone.test/DirectionTest.h \
+    abalone.test/GameTest.h \
     abalone.test/MarbleTest.h \
     abalone.test/PositionTest.h \
     abalone.view/InterfaceView.h \

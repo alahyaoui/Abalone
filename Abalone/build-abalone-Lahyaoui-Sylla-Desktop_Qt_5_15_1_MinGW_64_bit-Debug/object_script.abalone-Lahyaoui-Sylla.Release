@@ -9,6 +9,7 @@ release/Position.o
 release/Subject.o
 release/BoardTest.o
 release/DirectionTest.o
+release/GameTest.o
 release/MarbleTest.o
 release/PositionTest.o
 release/View.o

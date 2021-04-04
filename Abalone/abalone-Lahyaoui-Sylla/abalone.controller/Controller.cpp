@@ -49,13 +49,16 @@ void Controller::tryRegularMove(std::vector<Position> move){
         _game->move(marbleToMove, positionToGo);
         _game->incRound();//Si ça fonctionne incremente le compteur de round
     }catch(abalone::exception::MarbleException marbleException){
-        _view->displayError(marbleException.to_string());
+        //_view->displayError(marbleException.to_string());
+        _view->displayError(marbleException.msg());
         tryMove();
     }catch(abalone::exception::DirectionException directionException){
-        _view->displayError(directionException.to_string());
+        //_view->displayError(directionException.to_string());
+        _view->displayError(directionException.msg());
         tryMove();
     }catch(abalone::exception::InvalidGameStatusException statusException){
-        _view->displayError(statusException.to_string());
+        //_view->displayError(statusException.to_string());
+        _view->displayError(statusException.msg());
     }
 }
 
@@ -69,13 +72,16 @@ void Controller::tryLateralMove(std::vector<Position> lateralMove){
         _game->move(marbletoMove1, marbletoMove2, positionToGo);
         _game->incRound();
     }catch(abalone::exception::MarbleException marbleException){
-        _view->displayError(marbleException.to_string());
+        //_view->displayError(marbleException.to_string());
+        _view->displayError(marbleException.msg());
         tryMove();
     }catch(abalone::exception::DirectionException directionException){
-        _view->displayError(directionException.to_string());
+        //_view->displayError(directionException.to_string());
+        _view->displayError(directionException.msg());
         tryMove();
     }catch(abalone::exception::InvalidGameStatusException statusException){
-        _view->displayError(statusException.to_string());
+        //_view->displayError(statusException.to_string());
+        _view->displayError(statusException.msg());
     }
 }
 

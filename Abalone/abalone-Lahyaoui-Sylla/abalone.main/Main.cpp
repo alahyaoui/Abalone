@@ -9,7 +9,6 @@ using namespace abalone::controller;
 using namespace abalone::model;
 using namespace abalone::view;
 
-
 int main(){
     Game * game = new Game();
     View * view = new View();
