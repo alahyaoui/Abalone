@@ -9,7 +9,7 @@
 
 MainWindow2::MainWindow2(QWidget * parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow2),
+    ui(new Ui::::MainWindow2),
     _gHexaCells {}
 {
     ui->setupUi(this);

@@ -1,7 +1,7 @@
 #ifndef HEXAGONTYPE_H
 #define HEXAGONTYPE_H
 
-namespace abalone::abalonecore{
+namespace Ui::abalonecore{
 
 enum class HexagonType{
     VOID, EXIST

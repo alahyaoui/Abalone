@@ -52,7 +52,7 @@ public:
 
 };
 
-namespace Ui {
+namespace abalonealone::Ui {
     class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
 

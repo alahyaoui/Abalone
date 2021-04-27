@@ -79,7 +79,7 @@ public:
 
 };
 
-namespace Ui {
+namespabalonealone::Uie Ui {
     class MainWindow2: public Ui_MainWindow2 {};
 } // namespace Ui
 

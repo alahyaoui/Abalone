@@ -2,8 +2,8 @@
 #define MODEL_H
 
 #include <array>
-#include "../abalone-core/abalone.observer/Subject.h"
-//#include "abalone.observer/Subject.h"
+//#include "../abalone-core/abalone.observer/Subject.h"
+#include "Subject.h"
 
 
 using namespace nvs;

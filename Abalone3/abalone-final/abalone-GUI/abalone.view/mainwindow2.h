@@ -5,7 +5,7 @@
 
 #include <QMainWindow>
 
-namespace Ui
+namespace abalone::
 {
 class MainWindow2;
 }
@@ -22,7 +22,7 @@ class MainWindow2 : public QMainWindow
     void on_ghexacell_clicked(std::string value);
 
   private:
-    Ui::MainWindow2 * ui;
+    Ui::::MainWindow2 * ui;
     std::vector<GHexaCell *> _gHexaCells;
 };
 

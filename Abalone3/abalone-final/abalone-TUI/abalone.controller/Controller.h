@@ -2,8 +2,8 @@
 #define CONTROLLER_H
 
 #include "abalone.view/InterfaceView.h"
-#include "../abalone-core/abalone.observer/Observer.h"
 #include "../abalone-core/abalone.model/Model.h"
+#include "../abalone-core/abalone.observer/Observer.h"
 
 #include <vector>
 

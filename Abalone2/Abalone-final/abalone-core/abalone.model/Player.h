@@ -78,7 +78,7 @@ public:
  * @param playerStatus a PlayerStatus
  * @return a string materialization of the PlayerStatus.
  */
-inline std::string to_string(PlayerStatus playerStatus){
+std::string to_stringPlayer(PlayerStatus playerStatus){
     std::string strPlayerStatus = "";
     if(playerStatus == PlayerStatus::WIN){
         strPlayerStatus = "Win";
