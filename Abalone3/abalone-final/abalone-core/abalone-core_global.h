@@ -1,0 +1,12 @@
+#ifndef ABALONECORE_GLOBAL_H
+#define ABALONECORE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(ABALONECORE_LIBRARY)
+#  define ABALONECORE_EXPORT Q_DECL_EXPORT
+#else
+#  define ABALONECORE_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // ABALONECORE_GLOBAL_H
