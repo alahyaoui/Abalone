@@ -45,6 +45,7 @@ HEADERS += \
     abalone.model/Position.h \
     abalone.observer/Observer.h \
     abalone.observer/Subject.h \
+    abalone.utils/StringUtils.hpp \
     abalone.view/GHexacell.h \
     abalone.view/GMarble.h \
     abalone.view/View.h

@@ -58,9 +58,7 @@ void GMarble::mousePressEvent(QGraphicsSceneMouseEvent * event){
             qDebug() << "receive mouse event on Marble, emit signal";
             event->accept();
             emit sendValue(_value);
-        } //else if(event->button() == Qt::RightButton) {
-
-        //}
+        }
     }
 }
 

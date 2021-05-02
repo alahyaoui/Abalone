@@ -52,9 +52,9 @@ public:
     {
         if (View->objectName().isEmpty())
             View->setObjectName(QString::fromUtf8("View"));
-        View->resize(1073, 900);
-        View->setMinimumSize(QSize(1073, 900));
-        View->setMaximumSize(QSize(1073, 920));
+        View->resize(1073, 930);
+        View->setMinimumSize(QSize(1073, 930));
+        View->setMaximumSize(QSize(1073, 930));
         centralwidget = new QWidget(View);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setMinimumSize(QSize(0, 0));
@@ -131,7 +131,7 @@ public:
 
         horizontalGroupBox1 = new QGroupBox(centralwidget);
         horizontalGroupBox1->setObjectName(QString::fromUtf8("horizontalGroupBox1"));
-        horizontalGroupBox1->setGeometry(QRect(0, 780, 1071, 111));
+        horizontalGroupBox1->setGeometry(QRect(0, 780, 1071, 141));
         horizontalGroupBox1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         horizontalLayout_2 = new QHBoxLayout(horizontalGroupBox1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));

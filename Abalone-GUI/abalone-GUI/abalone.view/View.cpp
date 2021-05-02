@@ -16,6 +16,7 @@
 
 #include "abalone.controller/Controller.h"
 #include "abalone.model/Game.h"
+#include "abalone.utils/StringUtils.hpp"
 
 namespace abalone::view{
 
@@ -29,8 +30,7 @@ View::View(QWidget *parent) :
     _gMarbles {},
     _marbles {},
     _positions {},
-    _playerMarblesLoss {},
-    _turn {}
+    _playerMarblesLoss {}
 {
     ui->setupUi((QMainWindow *) this);
 
@@ -53,13 +53,7 @@ View::View(QWidget *parent) :
                          this, SLOT(on_gmarble_clicked(std::string)));
     }
 
-    //_scene->setSceneRect(QMainWindow::iconSize());
     _view->update();
-    //ui->verticalLayout->addWidget(_view);
-    //ui->verticalLayout_2->addWidget(_view);
-    //_view->setFixedSize(1145, 703);
-    //_view->sceneRect();
-    //_view->setFixedWidth(710);
     ui->myScene->addWidget(_view);
 }
 
@@ -69,6 +63,30 @@ View::~View(){
 
 void View::controller(abalone::controller::Controller * controller){
     this->_controller = controller;
+}
+
+void View::displayMessage(std::string msg){
+    ui->label->setText(msg.c_str());
+}
+
+void View::displayError(std::string msg){
+    ui->label->setText(msg.c_str());
+}
+
+void View::update(const nvs::Subject * subject){
+    abalone::model::Game * game = (abalone::model::Game*) subject;
+
+    for(size_t i = 0; i < _marbles.size(); i++){
+        _marbles.at(i) = *game->marbles().at(i);
+    }
+
+    _playerMarblesLoss = game->currentPlayerMarblesLoss();
+
+    if(game->currentRound() % 2 == 0){
+        ui->blackMarbleLoss->setNum(_playerMarblesLoss);
+    }else{
+        ui->whiteMarbleLoss->setNum(_playerMarblesLoss);
+    }
 }
 
 void View::paintEvent(QPaintEvent *event){
@@ -85,20 +103,21 @@ void View::keyPressEvent(QKeyEvent * event){
     }
 }
 
-void View::registerMarble(int x, int y){
+void View::registerMarble(int row, int col){
     for(auto & e : _marbles){
-        if((e.positionOnBoard().x() == x && e.positionOnBoard().y() == y)){
-            if( _positions.size() < 3){
+        if((e.positionOnBoard().x() == row && e.positionOnBoard().y() == col)){
+            if( _positions.size() < 2){
                 if(_positions.size() == 0){
-                    _positions.push_back(Position(x, y));
+                    _positions.push_back(Position(row, col));
                 }else{
-                    if(_positions.at(0).x() == x){
-                        _positions.push_back(Position(x, y));
+                    if(_positions.at(0).x() == row){
+                        _positions.push_back(Position(row, col));
                     }else{
-                        registerMove(x, y);
+                        registerMove(row, col);
                     }
                 }
-
+            }else{
+                registerMove(row, col);
             }
         }
     }
@@ -108,22 +127,23 @@ void View::registerMove(int x, int y){
     if( _positions.size() == 1){
         _positions.push_back(Position(x, y));
         _controller->tryMove(_positions);
-        _positions.clear();
     }else if(_positions.size() == 2){
         _positions.push_back(Position(x, y));
         _controller->tryMove(_positions);
-        _positions.clear();
     }
+    _positions.clear();
 }
+
 
 void View::on_ghexacell_clicked(std::string value){
     qDebug() << "gHexacell action";
-    ui->label->setText(value.c_str());
 
-    int x = value[0] - '0';
-    int y = value[1] - '0';
+    int row = value[0] - '0';
+    int col = value[1] - '0';
 
-    registerMove(x, y);
+    ui->label->setText(coordToString(row, col).c_str());
+
+    registerMove(row, col);
 
     std::string s = "receveive value from ghexacell ";
     s.append(value);
@@ -134,22 +154,16 @@ void View::on_gmarble_clicked(std::string value){
     qDebug() << "gMarble action";
     ui->label->setText(value.c_str());
 
-    int x = value[0] - '0';
-    int y = value[1] - '0';
+    int row = value[0] - '0';
+    int col = value[1] - '0';
 
-    registerMarble(x, y);
+    ui->label->setText(coordToString(row, col).c_str());
+
+    registerMarble(row, col);
 
     std::string s = "receveive value from gmarble ";
     s.append(value);
     qDebug() << s.c_str();
-}
-
-void View::displayMessage(std::string msg){
-    ui->label->setText(msg.c_str());
-}
-
-void View::displayError(std::string msg){
-    ui->label->setText(msg.c_str());
 }
 
 void View::updateMarble(){
@@ -177,11 +191,11 @@ void View::updateMarble(){
                 offset = -45;
             }else if(row == 2){
                 offset = -85;
-            }else if(row == 3){//FIX
+            }else if(row == 3){
                 offset = -130;
-            }else if(row == 4){//FIX
+            }else if(row == 4){
                 offset = -170;
-            }else if (row == 5){//FIX
+            }else if (row == 5){
                 offset = -130;
             }else if(row == 6){
                 offset = -85;
@@ -191,8 +205,8 @@ void View::updateMarble(){
                 offset = 0;
             }
 
-            int pointX = col * 85 + offset /*-25*/;
-            int pointY= row * 75;//* 75 /*-25*/;
+            int pointX = col * 85 + offset ;
+            int pointY= row * 75;
             _gMarbles.at(i)->setPos(QPoint(pointX, pointY));
 
             _gMarbles.at(i)->color(_marbles.at(i).color());
@@ -202,34 +216,10 @@ void View::updateMarble(){
 
             _gMarbles.at(i)->value(strCoord);
         }else{
-            if(_marbles.at(i).color() == Color::BLACK){
-                //_gMarbles.at(i)->setPos(500, 500);
-                _scene->removeItem(_gMarbles.at(i));
-            }else{
-                _scene->removeItem(_gMarbles.at(i));
-                //_gMarbles.at(i)->setPos(500, 500);
-            }
+            _scene->removeItem(_gMarbles.at(i));
         }
     }
 }
-
-void View::update(const nvs::Subject * subject){
-    abalone::model::Game * game = (abalone::model::Game*) subject;
-
-    _turn = game->currentRound();
-    for(size_t i = 0; i < _marbles.size(); i++){
-        _marbles.at(i) = *game->marbles().at(i);
-    }
-
-    _playerMarblesLoss = game->currentPlayerMarblesLoss();
-
-    if(_turn %2 == 0){
-        ui->blackMarbleLoss->setNum(_playerMarblesLoss);
-    }else{
-        ui->whiteMarbleLoss->setNum(_playerMarblesLoss);
-    }
-}
-
 
 void View::initMarbles(){
     int offset = 0;
@@ -347,27 +337,6 @@ void View::initGHexacells(){
     _gHexaCells.push_back(new GHexaCell(2 * 400 * 3 / 4, sqrt(3) * 100, "82", nullptr));
     _gHexaCells.push_back(new GHexaCell(2 * 400 * 3 / 4, sqrt(3) * 150, "83", nullptr));
     _gHexaCells.push_back(new GHexaCell(2 * 400 * 3 / 4, sqrt(3) * 200, "84", nullptr));
-}
-
-void View::centerAndResize() {
-
-   // get the dimension available on this screen
-   QSize availableSize = qApp->desktop()->availableGeometry().size();
-   int width = availableSize.width();
-   int height = availableSize.height();
-   qDebug() << "Available dimensions " << width << "x" << height;
-   width *= 0.9; // 90% of the screen size
-   height *= 0.9; // 90% of the screen size
-   qDebug() << "Computed dimensions " << width << "x" << height;
-   QSize newSize( width, height );
-   setGeometry(
-       QStyle::alignedRect(
-           Qt::LeftToRight,
-           Qt::AlignCenter,
-           newSize,
-           qApp->desktop()->availableGeometry()
-       )
-   );
 }
 
 }//namespace abalone::view

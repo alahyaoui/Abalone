@@ -32,6 +32,7 @@ private slots:
     void on_ghexacell_clicked(std::string value);
 
 private:
+    //attribut
     abalone::controller::Controller * _controller;
 
     QGraphicsScene * _scene;
@@ -50,8 +51,7 @@ private:
 
     int _playerMarblesLoss;
 
-    int _turn;
-
+    //méthodes
     void registerMarble(int x, int y);
 
     void registerMove(int x, int y);
@@ -73,8 +73,6 @@ public:
     void displayError(std::string msg);
 
     void update(const nvs::Subject * subject) override;
-
-    void centerAndResize();
 
 protected:
     void paintEvent(QPaintEvent * event) override;
