@@ -16,7 +16,7 @@
 
 namespace abalone::controller{
 
-Controller::Controller(Model *game, Ui::View *view):
+Controller::Controller(Model *game, View *view):
     _game {game},
     _view {view}
 {}

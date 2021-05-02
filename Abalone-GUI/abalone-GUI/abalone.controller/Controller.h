@@ -1,24 +1,25 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include "abalone.view/View.h"
 #include "abalone.model/Model.h"
 #include "abalone.observer/Observer.h"
-
+#include "abalone.view/View.h"
+#include "ui_View.h"
 
 using namespace abalone::model;
+using namespace abalone::view;
 
 namespace abalone::controller{
 
 /**
+
  * @brief The Controller class, is the class responsible
  * for the game dynamics and the update of sight as you go.
  */
 class Controller{
 private:
     Model * _game;
-    Ui::View * _view;
-    //View *_view;
+    View * _view;
 
     /**
      * @brief checkLevelStatus method, checks the level status.
@@ -42,7 +43,7 @@ public:
      * @param game a pointer of Model.
      * @param view a pointer of InterfaceView.
      */
-    Controller(Model *game, Ui::View *view);
+    Controller(Model *game, View *view);
 
     /**
      * @brief tryMove method, tries a move.

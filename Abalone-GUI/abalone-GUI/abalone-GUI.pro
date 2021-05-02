@@ -18,8 +18,9 @@ SOURCES += \
     abalone.model/Player.cpp \
     abalone.model/Position.cpp \
     abalone.observer/Subject.cpp \
-    abalone.view/View.cpp \
-    abalone.view/ghexacell.cpp
+    abalone.view/GHexacell.cpp \
+    abalone.view/GMarble.cpp \
+    abalone.view/View.cpp
 
 HEADERS += \
     abalone.controller/Controller.h \
@@ -44,8 +45,9 @@ HEADERS += \
     abalone.model/Position.h \
     abalone.observer/Observer.h \
     abalone.observer/Subject.h \
-    abalone.view/View.h \
-    abalone.view/ghexacell.h
+    abalone.view/GHexacell.h \
+    abalone.view/GMarble.h \
+    abalone.view/View.h
 
 FORMS += \
     abalone.view/View.ui
@@ -57,4 +59,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     .gitignore \
-    abalone.model/model.qmodel
+    abalone.model/model.qmodel \
+    img/blackBall.png \
+    img/whiteBall.png
