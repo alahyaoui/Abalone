@@ -4,7 +4,7 @@
 #include <iostream>
 #include "AbaloneException.hpp"
 
-namespace Ui::exception {
+namespace abalone::exception {
 
 /**
  * @brief The PlayerNotFoundException class, a customized exception class that inherit the methods and attributes of AbaloneException.

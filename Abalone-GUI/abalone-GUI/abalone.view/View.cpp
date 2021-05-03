@@ -216,9 +216,15 @@ void View::updateMarble(){
 
             _gMarbles.at(i)->value(strCoord);
         }else{
-            _scene->removeItem(_gMarbles.at(i));
+            if(_scene->children().contains(_gMarbles.at(i))){
+                _scene->removeItem(_gMarbles.at(i));
+            }else{
+                _scene->addItem(_gMarbles.at(i));
+                _scene->removeItem(_gMarbles.at(i));
+            }
         }
     }
+    _view->update();
 }
 
 void View::initMarbles(){

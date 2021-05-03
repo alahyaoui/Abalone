@@ -4,7 +4,7 @@
 #include <iostream>
 #include "MarbleException.hpp"
 
-namespace Ui::exception {
+namespace abalone::exception {
 
 /**
  * @brief The MarbleNotFoundException class, a customized exception class that inherit the methods and attributes of MarbleException.

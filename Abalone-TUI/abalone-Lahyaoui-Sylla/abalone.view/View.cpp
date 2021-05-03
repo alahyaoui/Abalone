@@ -6,8 +6,6 @@
 
 #include <algorithm>
 
-
-
 //using namespace abalone::view;
 //using namespace abalone::model;
 
