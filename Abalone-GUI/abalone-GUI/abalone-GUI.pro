@@ -4,7 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
 
-RC_ICONS = abalone.ico
+RC_ICONS = resources/abalone.ico
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -65,6 +65,8 @@ DISTFILES += \
     abalone.ico \
     abalone.model/model.qmodel \
     img/blackBall.png \
-    img/whiteBall.png
+    img/whiteBall.png \
+    resources/abalone.ico \
+    resources/abalone240.ico
 
 
