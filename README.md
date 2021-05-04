@@ -100,6 +100,22 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
 ![alt text](Mode%20d'emploi/Video/abalone-GUI.mkv?raw=true)
+
+**Notation des coups ABA-PRO**
+
+*Les mouvements au jeu Abalone peuvent être de deux types :*
+
+- Déplacement en ligne : On indique un tel mouvement en cliquant sur la bille à déplacer puis en suite
+en cliquant à nouveau mais cette fois-ci sur la case ou sur la bille (celle si se trouvant sur une ligne différente)
+ dans la direction du mouvement.
+
+-Déplacement sur la même ligne non latéral : On indique un tel mouvement en cliquant sur la bille à déplacer puis ensuite 
+en effectuant *un clique droit* sur la bille a proximité dans la direction du mouvement.
+
+- Déplacement latéral : On indique un tel mouvement par un clique sur la position de la première bille du groupe, 
+suivie d'un clique sur la position de la dernière bille du groupe suivi d'un clique sur la position de l'hexagone
+sur lequel l'on veut se déplacer. 
+
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
 
