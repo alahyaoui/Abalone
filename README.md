@@ -104,7 +104,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 **Cliquer sur l'image ci dessous pour voir la vidéo expliquative.**
 
 
-[![Watch the video](Screenshots/youtube-Abalone-Screenshot.jpg)](https://youtu.be/5XMqYETu90Q)
+[![Watch the video](Screenshots/youtube-Abalone-Screenshot.png?raw=true)](https://youtu.be/5XMqYETu90Q)
 [![Watch the video](https://img.youtube.com/vi/5XMqYETu90Q/hqdefault.jpg)](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
