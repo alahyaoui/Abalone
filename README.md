@@ -101,7 +101,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
-[![Watch the video](https://img.youtube.com/vi/v=5XMqYETu90Q)](https://youtu.be/5XMqYETu90Q)
+[![Watch the video](https://img.youtube.com/vi/5XMqYETu90Q)](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
 
