@@ -102,6 +102,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
 **Cliquer sur l'image ci dessus pour voir la vidéo expliquative.**
+
 [![Watch the video](https://img.youtube.com/vi/5XMqYETu90Q/hqdefault.jpg)](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
@@ -120,7 +121,6 @@ suivie d'un clique sur la position de la dernière bille du groupe suivi d'un cl
 sur lequel l'on veut se déplacer. 
 
 *Remarque :*
-
 Pour annuler un mouvement il vous suffit d'appuyer sur la touche **ESC** de votre clavier.
 
 ###### Date de remise:
