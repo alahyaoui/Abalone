@@ -90,7 +90,16 @@ première se trouve en D3.
 vendredi 2 avril 2021 à 18h00.
 
 ## Implémentation Graphique:
-//TODO Rapport Implémentation graphique.
+***Execution*** : 
+Windows -> ouvrir le dossier "Executable" a la racine du projet et executer l'installer dans Executable/Windows/installer.exe.
+Linux -> executer en ligne de commande l'executable Executable/abalone-Gui.
+
+Si vous rencontrez des difficultés à executer le projet avec l'une des manières énoncés
+vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
+
+***Utilisation***: Le projet respecte la notation ABA-PRO.
+
+[](Mode%20d'emploi/Video)
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
 
