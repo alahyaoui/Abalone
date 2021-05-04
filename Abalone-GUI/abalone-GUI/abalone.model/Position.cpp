@@ -13,7 +13,7 @@ Position::Position(int x, int y):
 Position::Position():Position(0, 0)
 {}
 
-Position Position::next(Direction direction){
+Position Position::next(const Direction & direction) const{
     Position dir = toPosition(direction);
     return Position(this->_x + dir._x, this->_y + dir._y);
 }
@@ -26,15 +26,15 @@ int Position::y() const{
     return _y;
 }
 
-bool Position::equals(Position otherPosition) const{
+bool Position::equals(const Position & otherPosition) const{
     return this->_x == otherPosition._x && this->_y == otherPosition._y;
 }
 
-bool Position::operator==(Position otherPosition) const{
+bool Position::operator==(const Position & otherPosition) const{
     return this->equals(otherPosition);
 }
 
-bool Position::operator!=(Position otherPosition) const{
+bool Position::operator!=(const Position & otherPosition) const{
     return !(this->equals(otherPosition));
 }
 

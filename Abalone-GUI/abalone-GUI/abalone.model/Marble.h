@@ -29,9 +29,7 @@ public:
     Marble(Position positionOnBoard, Color color);
     Marble();
 
-    //virtual ~Marble() = default;
-
-    //void incCountMarble(Board board, Position & nextPosition, Direction direction , int & countNbMarble);
+    //~Marble() = default;
 
     /**
      * @brief move method, moves the marble if it's possible.
@@ -39,7 +37,9 @@ public:
      * @param positionToGo a Position.
      * @param marbles an array of Marbles.
      */
-    void move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);
+    void move(Board & board,
+              const Position & positionToGo,
+              std::array<Marble*, 28> & marbles);
 
     /**
      * @brief lateralMove method, moves laterally the marble if it's possible.
@@ -47,7 +47,8 @@ public:
      * @param positionToGo a Position.
      * @param marbles an array of Marbles.
      */
-    void lateralMove(Board & board, Position positionToGo);
+    void lateralMove(Board & board,
+                     const Position & positionToGo);
 
     /**
      * @brief moveFree method, changes the isFree attribute of the hexagons
@@ -57,7 +58,8 @@ public:
      * @param board a Board.
      * @param positionToGo a Position.
      */
-    void moveFree(Board & board, Position positionToGo);
+    void moveFree(Board & board,
+                  const Position & positionToGo);
 
     /**
      * @brief moveAndPush method, changes the isFree attribute of the hexagons
@@ -70,7 +72,10 @@ public:
      * @param nextEnemyPosition the position where the next oppos marble will be pushed.
      * @param marbles an array of marbles.
      */
-    void moveAndPush(Board & board, Position positionToGo, Position nextEnemyPosition, std::array<Marble*, 28> & marbles);
+    void moveAndPush(Board & board,
+                     const Position & positionToGo,
+                     const Position & nextEnemyPosition,
+                     std::array<Marble*, 28> & marbles);
 
     /**
      * @brief moveAndPushInVoid method, changes the isFree attribute of the hexagons
@@ -83,7 +88,9 @@ public:
      * @param nextEnemyPosition the position where the next oppos marble will be pushed.
      * @param marbles an array of marbles.
      */
-    void moveAndPushInVoid(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles);
+    void moveAndPushInVoid(Board & board,
+                           const Position & positionToGo,
+                           std::array<Marble*, 28> & marbles);
 
     /**
      * @brief positionOnBoard method a simple getter of _positionOnBoard.
@@ -101,13 +108,13 @@ public:
      * @brief color method a simple setter of _color.
      * @param color a Color.
      */
-    void color(Color color);
+    void color(const Color & color);
 
     /**
      * @brief positionOnBoard method a simple setter of _positionOnBoard.
      * @param position a Position.
      */
-    void positionOnBoard(Position position);
+    void positionOnBoard(const Position & position);
 
     /**
      * @brief to_string method, converts a marble into a string.
@@ -125,7 +132,8 @@ public:
  * @param position a Position.
  * @return the marble located at the given position.
  */
-Marble* getMarble(std::array<Marble*, 28> & marbles, Position position);
+Marble* getMarble(std::array<Marble*, 28> & marbles,
+                  const Position & position);
 
 /*
 inline Marble getMarble(std::array<Marble, 28> marbles, Position position){

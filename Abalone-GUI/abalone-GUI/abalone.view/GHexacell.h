@@ -51,7 +51,7 @@ public:
      * Capture mouse press event. ghexacell is now clickable.
      * see https://www.learnqt.guide/events/working-with-events/
      */
-     void mousePressEvent(QGraphicsSceneMouseEvent * event);
+    void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
     /*
      * #1 add signal to emit when hexagon is clicked.
@@ -59,7 +59,7 @@ public:
      * To do this, class must inherit from QObject.
      */
 signals:
-   void sendValue(std::string value);
+    void sendValue(std::string value);
 };
 
 //

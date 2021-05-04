@@ -38,7 +38,7 @@ public:
      * @param direction a Direction.
      * @return a Position.
      */
-    Position next(Direction direction);
+    Position next(const Direction & direction) const;
 
     /**
      * @brief x method a simple getter of _x.
@@ -57,21 +57,21 @@ public:
      * @param otherPosition a Position.
      * @return a boolean.
      */
-    bool equals(Position otherPosition) const;
+    bool equals(const Position & otherPosition) const;
 
     /**
      * @brief operator == checks the equality between two Position.
      * @param otherPosition a Position.
      * @return a boolean.
      */
-    bool operator==(Position otherPosition) const;
+    bool operator==(const Position & otherPosition) const;
 
     /**
      * @brief operator != checks the inequality between two Position.
      * @param otherPosition a Position.
      * @return a boolean.
      */
-    bool operator!=(Position otherPosition) const;
+    bool operator!=(const Position & otherPosition) const;
 
     /**
      * @brief to_string method, converts a Position into a string.

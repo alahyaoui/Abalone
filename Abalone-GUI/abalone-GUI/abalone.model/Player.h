@@ -56,13 +56,13 @@ public:
      * @brief playerStatus method a simple setter of _playerStatus.
      * @param status a PlayerStatus.
      */
-    void playerStatus(PlayerStatus status);
+    void playerStatus(const PlayerStatus &status);
 
     /**
      * @brief marblesLoss method a simple setter of _marblesLoss
      * @param marblesLoss an integer.
      */
-    void marblesLoss(int marblesLoss);
+    void marblesLoss(const int & marblesLoss);
 
     /**
      * @brief to_string method, convert a Player into a string.

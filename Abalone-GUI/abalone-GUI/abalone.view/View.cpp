@@ -29,8 +29,7 @@ View::View(QWidget *parent) :
     _gHexaCells {},
     _gMarbles {},
     _marbles {},
-    _positions {},
-    _playerMarblesLoss {}
+    _positions {}
 {
     ui->setupUi((QMainWindow *) this);
 
@@ -65,11 +64,11 @@ void View::controller(abalone::controller::Controller * controller){
     this->_controller = controller;
 }
 
-void View::displayMessage(std::string msg){
+void View::displayMessage(const std::string & msg){
     ui->label->setText(msg.c_str());
 }
 
-void View::displayError(std::string msg){
+void View::displayError(const std::string & msg){
     ui->label->setText(msg.c_str());
 }
 
@@ -80,16 +79,16 @@ void View::update(const nvs::Subject * subject){
         _marbles.at(i) = *game->marbles().at(i);
     }
 
-    _playerMarblesLoss = game->currentPlayerMarblesLoss();
+    int playerMarblesLoss = game->currentPlayerMarblesLoss();
 
     if(game->currentRound() % 2 == 0){
-        ui->blackMarbleLoss->setNum(_playerMarblesLoss);
+        ui->blackMarbleLoss->setNum(playerMarblesLoss);
     }else{
-        ui->whiteMarbleLoss->setNum(_playerMarblesLoss);
+        ui->whiteMarbleLoss->setNum(playerMarblesLoss);
     }
 }
 
-void View::paintEvent(QPaintEvent *event){
+void View::paintEvent(QPaintEvent * event){
     updateMarble();
 }
 

@@ -46,13 +46,13 @@ public:
      * @brief type method a simple setter of _type.
      * @param type an HexagonType.
      */
-    void type(HexagonType type);
+    void type(const HexagonType &type);
 
     /**
      * @brief isFree method a simple setter of _isFree.
      * @param isFree a boolean.
      */
-    void isFree(bool isFree);
+    void isFree(const bool & isFree);
 
     /**
      * @brief to_string method, converts an Hexagon into a string.

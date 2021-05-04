@@ -49,8 +49,6 @@ private:
 
     std::vector<abalone::model::Position> _positions;
 
-    int _playerMarblesLoss;
-
     //méthodes
     void registerMarble(int x, int y);
 
@@ -68,9 +66,9 @@ public:
 
     void controller(abalone::controller::Controller * controller);
 
-    void displayMessage(std::string msg);
+    void displayMessage(const std::string & msg);
 
-    void displayError(std::string msg);
+    void displayError(const std::string & msg);
 
     void update(const nvs::Subject * subject) override;
 

@@ -39,7 +39,8 @@ public:
      * @param positionOfMarble a Position.
      * @param positionToGo a Position.
      */
-    virtual void move(Position positionOfMarble, Position positionToGo) = 0;
+    virtual void move(const Position & positionOfMarble,
+                      const Position & positionToGo) = 0;
 
     /**
      * @brief move method, moves the all the marbles located between the first two position,
@@ -49,7 +50,9 @@ public:
      * @param positionOfMarble2
      * @param positionToGo
      */
-    virtual void move(Position positionOfMarble1,Position positionOfMarble2, Position positionToGo) = 0;
+    virtual void move(const Position & positionOfMarble1,
+                      const Position & positionOfMarble2,
+                      const Position & positionToGo) = 0;
 
     /**
      * @brief startGame method, starts the game by initializing all the game attributes.

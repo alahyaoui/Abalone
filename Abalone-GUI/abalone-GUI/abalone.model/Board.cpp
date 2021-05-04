@@ -38,7 +38,7 @@ int Board::getNbColumn() const{
     return 9;//_hexagons[0].size();
 }
 
-bool Board::isInside(Position position) const{
+bool Board::isInside(const Position & position) const{
     int row = position.x();
     int column = position.y();
     if (row < 0 || row >= getNbRow() || column < 0 || column >= getNbColumn()
@@ -48,7 +48,7 @@ bool Board::isInside(Position position) const{
     return true;
 }
 
-bool Board::isHexagonFree(Position position) const{
+bool Board::isHexagonFree(const Position & position) const{
     int row = position.x();
     int column = position.y();
     if(this->isInside(position))
@@ -56,7 +56,7 @@ bool Board::isHexagonFree(Position position) const{
     return true;
 }
 
-void Board::updateHexagonState(Position position){
+void Board::updateHexagonState(const Position & position){
     int row = position.x();
     int column = position.y();
     _hexagons[row][column].isFree(!_hexagons[row][column].isFree());

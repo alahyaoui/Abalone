@@ -19,9 +19,8 @@ namespace abalone::model{
  */
 class Game: public Model{
 private:
-    int _currentRound;//Compteur de round IMPORTANT !!!! PERMETTRE DE CONNAITRE LE TOUR DU JOUEUR
+    int _currentRound;
     std::array<Marble*, 28> _marbles;
-    //std::vector<Marble> _marbles;//Vector prcq erreur compilation si j'essai de copier un vector dans un tableau
     std::array<Player, 2> _players;
     GameStatus _status = GameStatus::NOT_STARTED;
     Board _board;
@@ -45,7 +44,7 @@ private:
      * @brief gameStatus method, simple setter of _status.
      * @param gameStatus a GameStatus.
      */
-    void gameStatus(GameStatus gameStatus);
+    void gameStatus(const GameStatus & gameStatus);
 
     /**
      * @brief initializeMarbles method, initializes _marbles an array of marbles.
@@ -79,7 +78,8 @@ public:
      * @param positionOfMarble a Position.
      * @param positionToGo a Position.
      */
-    void move(Position positionOfMarble, Position positionToGo);
+    void move(const Position & positionOfMarble,
+              const Position & positionToGo);
 
     /**
      * @brief move method, moves the all the marbles located between the first two position,
@@ -89,7 +89,9 @@ public:
      * @param positionOfMarble2
      * @param positionToGo
      */
-    void move(Position positionOfMarble1,Position positionOfMarble2, Position positionToGo);
+    void move(const Position & positionOfMarble1,
+              const Position & positionOfMarble2,
+              const Position & positionToGo);
 
     /**
      * @brief startGame method, starts the game by initializing all the game attributes.

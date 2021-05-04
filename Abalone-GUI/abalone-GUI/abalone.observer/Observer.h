@@ -26,7 +26,7 @@ class Subject;
 
 class Observer
 {
-  public:
+public:
 
     /*!
      * \brief Méthode virtuelle pure que chaque observateur concret doit
@@ -87,7 +87,7 @@ class Observer
      */
     Observer & operator=(Observer &&) = default;
 
-  protected:
+protected:
 
     /*!
      * \brief Constructeur protégé pour éviter l'instanciation

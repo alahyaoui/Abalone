@@ -56,14 +56,14 @@ public:
      * @param position a Position.
      * @return a boolean.
      */
-    bool isInside(Position position) const;
+    bool isInside(const Position & position) const;
 
     /**
      * @brief isHexagonFree method, gets the _isFree attribute of hexagon at the given position.
      * @param position a Position.
      * @return a boolean.
      */
-    bool isHexagonFree(Position position) const;
+    bool isHexagonFree(const Position & position) const;
 
     /**
      * @brief updateHexagonState method, changes the _isFree attribute of the hexagon
@@ -71,7 +71,7 @@ public:
      *
      * @param position a Position.
      */
-    void updateHexagonState(Position position);
+    void updateHexagonState(const Position & position);
 
     /**
      * @brief to_string method, converts the Board into a string.

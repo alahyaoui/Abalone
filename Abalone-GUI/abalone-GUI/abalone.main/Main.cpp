@@ -17,7 +17,6 @@ int main(int argc, char *argv[]){
 
     Game * game = new Game();
     View * view = new View();
-    //View view;
 
     Controller * controller = new Controller(game, view);
     controller->addModelObserver(view);

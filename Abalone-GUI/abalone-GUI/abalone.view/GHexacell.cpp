@@ -51,13 +51,13 @@ void GHexaCell::mousePressEvent(QGraphicsSceneMouseEvent * event){
     QGraphicsItem::mousePressEvent(event);
 
     if(!event->isAccepted()) {
-      //  if(event->button() == Qt::RightButton) {
-            qDebug() << "receive mouse event on GHexacell, emit signal";
-            event->accept();
-            emit sendValue(_value);
-    //    }// else if(event->button() == Qt::LeftButton) {
+        //  if(event->button() == Qt::RightButton) {
+        qDebug() << "receive mouse event on GHexacell, emit signal";
+        event->accept();
+        emit sendValue(_value);
+        //    }// else if(event->button() == Qt::LeftButton) {
 
- //       }
+        //       }
     }
 }
 

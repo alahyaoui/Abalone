@@ -23,11 +23,11 @@ int Player::marblesLoss() const{
     return _marblesLoss;
 }
 
-void Player::playerStatus(PlayerStatus status){
+void Player::playerStatus(const PlayerStatus & status){
     this->_status = status;
 }
 
-void Player::marblesLoss(int marblesLoss){
+void Player::marblesLoss(const int & marblesLoss){
     this->_marblesLoss = marblesLoss;
 }
 
@@ -38,16 +38,3 @@ std::string Player::to_string(){
 }
 
 }// namespace abalone::model
-
-/*
-std::string to_string(PlayerStatus playerStatus){
-    std::string strPlayerStatus = "";
-    if(playerStatus == PlayerStatus::WIN){
-        strPlayerStatus = "Win";
-    }else if(playerStatus == PlayerStatus::FAIL){
-        strPlayerStatus = "Fail";
-    }else{
-        strPlayerStatus = "In progress";
-    }
-    return strPlayerStatus;
-}*/

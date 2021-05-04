@@ -49,15 +49,15 @@ public:
     void paint(QPainter * painter,
                const QStyleOptionGraphicsItem * option,
                QWidget * widget) override;
-//protected:
+    //protected:
 public:
     /*
    * Capture mouse press event. ghexacell is now clickable.
    * see https://www.learnqt.guide/events/working-with-events/
    */
-   void mousePressEvent(QGraphicsSceneMouseEvent * event) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent * event) override;
 
-   QRectF boundingRect () const override;
+    QRectF boundingRect () const override;
 
     /*
    * #1 add signal to emit when hexagon is clicked.

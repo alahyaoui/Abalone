@@ -7,6 +7,8 @@
 //using namespace abalone::model;
 //using namespace std;
 
+using namespace abalone::exception;
+
 namespace abalone::model{
 
 Marble::Marble(Position positionOnBoard, Color color):
@@ -16,7 +18,7 @@ Marble::Marble(Position positionOnBoard, Color color):
 
 Marble::Marble():Marble(Position(0,0), Color::NONE){}
 
-void Marble::move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles){
+void Marble::move(Board & board, const Position & positionToGo, std::array<Marble*, 28> & marbles){
     Position nextPosition;
     Position nextEnemyPosition;
 
@@ -28,34 +30,52 @@ void Marble::move(Board & board, Position positionToGo, std::array<Marble*, 28> 
     int countOtherColor = 0;
 
     if(nextPosition != positionToGo){
-        throw abalone::exception::ImpossibleMovementException("mouvement impossible, la case étant trop éloigné pour effectuer le mouvement.", __FILE__, __FUNCTION__, __LINE__);
+        throw ImpossibleMovementException("mouvement impossible, "
+                                          "la case étant trop éloigné "
+                                          "pour effectuer le mouvement.",
+                                          __FILE__, __FUNCTION__, __LINE__);
     }else{
-        while(!board.isHexagonFree(nextPosition) && getMarble(marbles, nextPosition)->_color == this->_color){
+        while(!board.isHexagonFree(nextPosition)
+              && getMarble(marbles, nextPosition)->_color == this->_color){
             countSameColor++;
             nextPosition = nextPosition.next(direction);
         }
         if(countSameColor > 3){
-            throw abalone::exception::ImpossibleMovementException("mouvement impossible, trop de billes alliés sur le chemin.", __FILE__, __FUNCTION__, __LINE__);
+            throw ImpossibleMovementException("mouvement impossible, "
+                                              "trop de billes alliés sur le chemin.",
+                                              __FILE__, __FUNCTION__, __LINE__);
         }else{
             if(!board.isInside(nextPosition)){
-                throw abalone::exception::ImpossibleMovementException("mouvement impossible, la position de déplacement est en dehors du board.", __FILE__, __FUNCTION__, __LINE__);
+                throw ImpossibleMovementException("mouvement impossible, "
+                                                  "la position du déplacement "
+                                                  "est en dehors du board.",
+                                                  __FILE__, __FUNCTION__, __LINE__);
             }else{
                 if(board.isHexagonFree(nextPosition)){
                     moveFree(board, nextPosition);
                 }else{
-                    nextEnemyPosition = nextPosition;//Faire attention peut ne pas fonctionner comme souhaité
-                    while(!board.isHexagonFree(nextEnemyPosition) && getMarble(marbles, nextEnemyPosition)->_color != this->_color){//avance le nextPositioEnemy tant qu'il y a un ennemi
+                    nextEnemyPosition = nextPosition;
+                    while(!board.isHexagonFree(nextEnemyPosition)//avance le nextPositioEnemy tant qu'il y a un ennemi
+                          && getMarble(marbles, nextEnemyPosition)->_color != this->_color){
+
                         countOtherColor++;
                         nextEnemyPosition = nextEnemyPosition.next(direction);
                     }
+
                     if(countOtherColor >= countSameColor){
-                        throw abalone::exception::ImpossibleMovementException("mouvement impossible, pas assez de billes alliés pour pousser les billes ennemies.", __FILE__, __FUNCTION__, __LINE__);
+                        throw ImpossibleMovementException("mouvement impossible, "
+                                                          "pas assez de billes alliés "
+                                                          "pour pousser les billes ennemies.",
+                                                          __FILE__, __FUNCTION__, __LINE__);
                     }else{
                         if(!board.isInside(nextEnemyPosition)){
                             moveAndPushInVoid(board, nextPosition, marbles);
                         }else{
                             if(!board.isHexagonFree(nextEnemyPosition)){
-                                throw abalone::exception::ImpossibleMovementException("mouvement impossible, bille allié qui bloque la poussée des billes ennemies.", __FILE__, __FUNCTION__, __LINE__);
+                                throw ImpossibleMovementException("mouvement impossible, "
+                                                                  "bille allié qui bloque "
+                                                                  "la poussée des billes ennemies.",
+                                                                  __FILE__, __FUNCTION__, __LINE__);
                             }else{
                                 moveAndPush(board, nextPosition, nextEnemyPosition, marbles);
                             }
@@ -67,7 +87,7 @@ void Marble::move(Board & board, Position positionToGo, std::array<Marble*, 28> 
     }
 }
 
-void Marble::lateralMove(Board & board, Position positionToGo){
+void Marble::lateralMove(Board & board, const Position & positionToGo){
 
     Position nextPosition;
 
@@ -75,13 +95,19 @@ void Marble::lateralMove(Board & board, Position positionToGo){
     nextPosition = this->_positionOnBoard.next(direction);
 
     if(nextPosition != positionToGo){
-        throw abalone::exception::ImpossibleMovementException("mouvement impossible, la case étant trop éloigné pour effectuer le mouvement.", __FILE__, __FUNCTION__, __LINE__);
+        throw ImpossibleMovementException("mouvement impossible, "
+                                          "la case étant trop éloigné pour effectuer le mouvement.",
+                                          __FILE__, __FUNCTION__, __LINE__);
     }else{
         if(!board.isInside(positionToGo)){
-            throw abalone::exception::ImpossibleMovementException("mouvement impossible, la position de déplacement est en dehors du board.", __FILE__, __FUNCTION__, __LINE__);
+            throw ImpossibleMovementException("mouvement impossible, "
+                                              "la position de déplacement est en dehors du board.",
+                                              __FILE__, __FUNCTION__, __LINE__);
         }else{
             if(!board.isHexagonFree(positionToGo)){
-                throw abalone::exception::ImpossibleMovementException("mouvement impossible, bille sur le chemin du mouvement.", __FILE__, __FUNCTION__, __LINE__);
+                throw ImpossibleMovementException("mouvement impossible, "
+                                                  "bille sur le chemin du mouvement.",
+                                                  __FILE__, __FUNCTION__, __LINE__);
             }else{
                 moveFree(board, positionToGo);
             }
@@ -89,33 +115,41 @@ void Marble::lateralMove(Board & board, Position positionToGo){
     }
 }
 
-void Marble::moveFree(Board & board, Position positionToGo){
+void Marble::moveFree(Board & board, const Position & positionToGo){
     board.updateHexagonState(this->_positionOnBoard);//Je met ton ancienne position a free
     this->_positionOnBoard = positionToGo;
     board.updateHexagonState(this->_positionOnBoard);//Je met ta nouvelle position a not free
 }
 
-void Marble::moveAndPush(Board & board, Position positionToGo, Position nextEnemyPosition, std::array<Marble*, 28> & marbles){
+void Marble::moveAndPush(Board & board,
+                         const Position & positionToGo,
+                         const Position & nextEnemyPosition,
+                         std::array<Marble*, 28> & marbles)
+{
     getMarble(marbles, positionToGo)->_positionOnBoard = nextEnemyPosition;//Deplace l'ennemie en face de nos billes tout derrière
     board.updateHexagonState(nextEnemyPosition);//update l'attribut free de la case ou la bille enemie a été poussée
     board.updateHexagonState(this->_positionOnBoard);//update l'attribut free de la case ou se trouvait cette bille avant son déplacement
     this->_positionOnBoard = positionToGo;
 }
 
-void Marble::moveAndPushInVoid(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles){
-    getMarble(marbles, positionToGo)->_positionOnBoard = Position(-1, -1);//J'aurais pu faire un move dans le vide a verifier
+void Marble::moveAndPushInVoid(Board & board,
+                               const Position & positionToGo,
+                               std::array<Marble*, 28> & marbles)
+{
+    getMarble(marbles, positionToGo)->_positionOnBoard = Position(-1, -1);
     board.updateHexagonState(this->_positionOnBoard);//Je met ton ancienne position a free
     this->_positionOnBoard = positionToGo;
 }
 
-Marble* getMarble(std::array<Marble*, 28> & marbles, Position position){
+Marble* getMarble(std::array<Marble*, 28> & marbles, const Position & position){
     for(size_t i = 0; i < marbles.size(); i++){
         if(marbles.at(i)->positionOnBoard() == position){
             return marbles.at(i);
         }
     }
-    throw abalone::exception::MarbleNotFoundException("Aucune bille ne correspondant trouvé dans le tableau de marble.", __FILE__, __FUNCTION__, __LINE__);//NE PAS UTILISER !!!!!!!!!! JE NE VEUX PAS ENVOYER UNE ERREUR SI IL N Y A PAS DE BILLE
-    //return Marble(Position(0, 0), Color::NONE);//Sensé ne jamais arrivé étant donné que j'ai verifier si la case etait occupé avant d'appeler cette fonction
+    throw MarbleNotFoundException("Aucune bille ne correspondant "
+                                  "trouvé dans le tableau de marble.",
+                                  __FILE__, __FUNCTION__, __LINE__);
 }
 
 Position Marble::positionOnBoard() const{
@@ -126,11 +160,11 @@ Color Marble::color() const{
     return this->_color;
 }
 
-void Marble::positionOnBoard(Position position){
+void Marble::positionOnBoard(const Position & position){
     this->_positionOnBoard = position;
 }
 
-void Marble::color(Color color){
+void Marble::color(const Color & color){
     this->_color = color;
 }
 
@@ -145,65 +179,3 @@ std::string Marble::to_string(){
 }
 
 }// namespace abalone::model
-
-
-
-/*
-void Marble::move(Board & board, Position positionToGo, std::array<Marble*, 28> & marbles){
-    Position nextPosition;
-    Position nextEnemyPosition;
-
-    Direction direction = computeDirection(this->_positionOnBoard, positionToGo);
-    nextPosition = this->_positionOnBoard.next(direction);
-    nextEnemyPosition = this->_positionOnBoard.next(direction);
-
-    int countSameColor = 1;
-    int countOtherColor = 0;
-
-    if(nextPosition == positionToGo){
-        if(board.isInside(positionToGo)){
-            if(!board.isHexagonFree(nextPosition)){
-                while(!board.isHexagonFree(nextPosition) && getMarble(marbles, nextPosition)->_color == this->_color){
-                    countSameColor++;
-                    nextPosition = nextPosition.next(direction);
-                }
-                if(countSameColor <= 3){
-                    if(board.isInside(nextPosition)){
-                        if(board.isHexagonFree(nextPosition)){
-                            moveFree(board, nextPosition);
-                        }else{
-                            nextEnemyPosition = nextPosition;//Faire attention peut ne pas fonctionner comme souhaité
-                            while(!board.isHexagonFree(nextEnemyPosition) && getMarble(marbles, nextEnemyPosition)->_color != this->_color){//avance le nextPositioEnemy tant qu'il y a un ennemi
-                                countOtherColor++;
-                                nextEnemyPosition = nextEnemyPosition.next(direction);
-                            }
-                            if(countOtherColor < countSameColor){
-                                if(board.isInside(nextEnemyPosition)){
-                                    if(board.isHexagonFree(nextEnemyPosition)){
-                                        moveAndPush(board, nextPosition, nextEnemyPosition, marbles);
-                                    }else{
-                                        throw abalone::exception::ImpossibleMovementException("mouvement impossible, bille allié qui bloque la poussée des billes ennemies.", __FILE__, __FUNCTION__, __LINE__);
-                                    }
-                                }else{
-                                    moveAndPushInVoid(board, nextPosition, marbles);
-                                }
-                            }else{
-                                throw abalone::exception::ImpossibleMovementException("mouvement impossible, pas assez de billes alliés pour pousser les billes ennemies.", __FILE__, __FUNCTION__, __LINE__);
-                            }
-                        }
-                    }else{
-                        throw abalone::exception::ImpossibleMovementException("mouvement impossible, la position de déplacement est en dehors du board.", __FILE__, __FUNCTION__, __LINE__);
-                    }
-                }else{
-                    throw abalone::exception::ImpossibleMovementException("mouvement impossible, trop de billes alliés sur le chemin OU position inaccessible (position trop loin pour faire le déplacement).", __FILE__, __FUNCTION__, __LINE__);
-                }
-            }else{
-                moveFree(board, positionToGo);
-            }
-        }else{
-            throw abalone::exception::ImpossibleMovementException("mouvement impossible, la position de déplacement est en dehors du board.", __FILE__, __FUNCTION__, __LINE__);
-        }
-    }else{
-        throw abalone::exception::ImpossibleMovementException("mouvement impossible, la case étant trop éloigné pour effectuer le mouvement.", __FILE__, __FUNCTION__, __LINE__);
-    }
-}*/

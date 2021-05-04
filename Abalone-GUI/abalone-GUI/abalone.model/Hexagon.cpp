@@ -18,11 +18,11 @@ bool Hexagon::isFree() const{
     return _isFree;
 }
 
-void Hexagon::type(HexagonType type) {
+void Hexagon::type(const HexagonType & type) {
     this->_type = type;
 }
 
-void Hexagon::isFree(bool isFree) {
+void Hexagon::isFree(const bool & isFree) {
     this->_isFree = isFree;
 }
 
