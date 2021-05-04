@@ -99,7 +99,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
-[](Mode%20d'emploi/Video)
+[](Mode%20d'emploi/Video/abalone-GUI.mkv)
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
 
