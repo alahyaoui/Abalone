@@ -91,7 +91,9 @@ vendredi 2 avril 2021 à 18h00.
 
 ## Implémentation Graphique:
 ***Execution*** : 
+
 Windows -> ouvrir le dossier "Executable" a la racine du projet et executer l'installer dans Executable/Windows/installer.exe.
+
 Linux -> executer en ligne de commande l'executable Executable/abalone-Gui.
 
 Si vous rencontrez des difficultés à executer le projet avec l'une des manières énoncés
