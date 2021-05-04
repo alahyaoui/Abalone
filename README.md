@@ -101,7 +101,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
-![alt text](Mode%20d'emploi/Video/abalone-GUI.mkv?raw=true)
+![alt text](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
 
