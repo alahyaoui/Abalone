@@ -109,8 +109,8 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 en cliquant à nouveau mais cette fois-ci sur la case ou sur la bille (celle si se trouvant sur une ligne différente)
  dans la direction du mouvement.
 
--Déplacement sur la même ligne non latéral : On indique un tel mouvement en cliquant sur la bille à déplacer puis ensuite 
-en effectuant *un clique droit* sur la bille a proximité dans la direction du mouvement.
+- Déplacement sur la même ligne non latéral : On indique un tel mouvement en cliquant sur la bille à déplacer puis ensuite 
+en effectuant cette fois ci **un clique droit** sur la bille a proximité dans la direction du mouvement.
 
 - Déplacement latéral : On indique un tel mouvement par un clique sur la position de la première bille du groupe, 
 suivie d'un clique sur la position de la dernière bille du groupe suivi d'un clique sur la position de l'hexagone
