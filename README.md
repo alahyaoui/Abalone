@@ -101,6 +101,8 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
+**Cliquer sur l'image ci dessous pour voir la vidéo expliquative.**
+
 [![Watch the video](https://img.youtube.com/vi/5XMqYETu90Q/hqdefault.jpg)](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
@@ -117,6 +119,9 @@ en effectuant cette fois ci **un clique droit** sur la bille a proximité dans l
 - Déplacement latéral : On indique un tel mouvement par un clique sur la position de la première bille du groupe, 
 suivie d'un clique sur la position de la dernière bille du groupe suivi d'un clique sur la position de l'hexagone
 sur lequel l'on veut se déplacer. 
+
+*Remarque :*
+Pour annuler un mouvement il vous suffit d'appuyer sur la touche **ESC** de votre clavier.
 
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
