@@ -67,6 +67,7 @@ DISTFILES += \
     img/blackBall.png \
     img/whiteBall.png \
     resources/abalone.ico \
+    resources/abalone.png \
     resources/abalone240.ico
 
 

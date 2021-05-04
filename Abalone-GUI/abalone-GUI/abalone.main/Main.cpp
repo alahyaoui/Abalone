@@ -25,10 +25,8 @@ int main(int argc, char *argv[]){
 
     view->controller(controller);
 
-    //view->setEnabled(true);
-
     view->show();
-    //view->centerAndResize();
+
     return a.exec();
 }
 
