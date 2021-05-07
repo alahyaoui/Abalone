@@ -38,7 +38,7 @@ void GHexaCell::paint(QPainter * painter,
     QPen pen(Qt::black, 1);
     painter->setPen(pen);
     QBrush brush;
-    brush.setColor(Qt::cyan);
+    brush.setColor(QColor(101, 56, 24));
     brush.setStyle(Qt::SolidPattern);
     painter->setBrush(brush);
     painter->drawPolygon(polygon());

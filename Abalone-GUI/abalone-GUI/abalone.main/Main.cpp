@@ -14,6 +14,7 @@ using namespace abalone::view;
 
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
+    //a.setWindowIcon(QIcon("./resources/abalone.ico"));
 
     Game * game = new Game();
     View * view = new View();
