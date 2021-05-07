@@ -47,7 +47,6 @@ void GHexaCell::paint(QPainter * painter,
 
 
 void GHexaCell::mousePressEvent(QGraphicsSceneMouseEvent * event){
-    //qDebug() << "receive mouse event on GHexacell, emit signal";
     QGraphicsItem::mousePressEvent(event);
 
     if(!event->isAccepted()) {
@@ -55,9 +54,9 @@ void GHexaCell::mousePressEvent(QGraphicsSceneMouseEvent * event){
         qDebug() << "receive mouse event on GHexacell, emit signal";
         event->accept();
         emit sendValue(_value);
-        //    }// else if(event->button() == Qt::LeftButton) {
+        //}// else if(event->button() == Qt::LeftButton) {
 
-        //       }
+        //}
     }
 }
 
