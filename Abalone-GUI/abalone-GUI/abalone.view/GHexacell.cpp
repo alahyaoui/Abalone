@@ -17,7 +17,6 @@ GHexaCell::GHexaCell(double x, double y,
       _value { value }
 {
     static const double pi_over_6 = atan(1) * 4 / 6;
-    // FIXME it'll be better if r is parameter.
     static const double r = 50;
 
     QPolygonF polygon;
