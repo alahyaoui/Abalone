@@ -1,6 +1,7 @@
 # Introduction
 
-Dans ce depôt se trouve le projet Abalone du binôme Sylla Alhassanne et Lahyaoui Ayoub.
+Dans ce depôt se trouve mon projet de DEV4 en BA2 à L'ESI *Abalone*.
+
 Le projet respectera le design pattern MVC mais implementera aussi d'autre design patern tel que le design pattern Observer/Observable.
 Ce depôt sera continuellement mis a jour par les deux membres du binôme en fonction de l'avancée du projet.
 
@@ -11,13 +12,7 @@ Un joueur joue avec des billes blanches, l’autre avec des billes noires. Le bu
 **Confer : Wikipedia**
 
 #### Auteurs de ce projet:
-Sylla, Alhassanne.
-Matricule: 52192.
-Groupe: D212.
-
-Lahyaoui, Ayoub. 
-Matricule: 54895.
-Groupe: D122.
+Lahyaoui Ayoub
 
 # Rapport
 
@@ -62,7 +57,7 @@ vendredi 19 février 2021 à 18h00.
 
 ***Utilisation***: Le projet respecte la notation ABA-PRO.
 
-![alt text](Mode%20d'emploi/Image/AbaloneExecution.png?raw=true)
+![alt text](Images/AbaloneExecution.png?raw=true)
 
 **Notation des coups ABA-PRO**
 
@@ -103,7 +98,7 @@ vous pouvez toujour ouvrir le projet avec Qtcreator, compiler puis executer.
 
 **Cliquer sur l'image ci dessous pour voir la vidéo expliquative.**
 
-[![Watch the video](Screenshots/youtube-Abalone-Screenshot.png?raw=true)](https://youtu.be/5XMqYETu90Q)
+[![Watch the video](Images/youtube-Abalone-Screenshot.png?raw=true)](https://youtu.be/5XMqYETu90Q)
 
 **Notation des coups ABA-PRO**
 
@@ -125,4 +120,3 @@ Pour annuler un mouvement il vous suffit d'appuyer sur la touche **ESC** de votr
 
 ###### Date de remise:
 vendredi 7 mai 2021 à 18h00
-
