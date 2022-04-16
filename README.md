@@ -17,7 +17,7 @@ Lahyaoui Ayoub
 # Rapport
 
 ## Modélisation métier:
-![alt text](Analyse/Image/AbaloneModelisation.PNG?raw=true)
+![alt text](Images/AbaloneModelisation.PNG?raw=true)
 
 **Model** : Interface représentant l'interface Model du design pattern MVC.
 
